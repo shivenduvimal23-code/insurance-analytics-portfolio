@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivendu Vimal | Insurance Analytics Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #eef4ff;
+      --dark: #0f172a;
+      --text: #172033;
+      --muted: #64748b;
+      --blue: #2563eb;
+      --blue-dark: #1e3a8a;
+      --cyan: #0ea5e9;
+      --green: #16a34a;
+      --purple: #7c3aed;
+      --orange: #f97316;
+      --card: #ffffff;
+      --border: rgba(15, 23, 42, 0.09);
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+      --soft-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.20), transparent 35%),
+        radial-gradient(circle at top right, rgba(14, 165, 233, 0.20), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 9%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 900;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 70px 9% 55px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37, 99, 235, 0.10);
+      border: 1px solid rgba(37, 99, 235, 0.20);
+      color: var(--blue-dark);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 54px;
+      line-height: 1.05;
+      color: var(--dark);
+      letter-spacing: -1.8px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      max-width: 720px;
+      color: #475569;
+      margin-bottom: 28px;
+      font-weight: 600;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--blue);
+      color: white;
+      padding: 13px 20px;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--blue-dark);
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(160px, 1fr));
+      gap: 12px;
+      max-width: 700px;
+    }
+
+    .hero-point {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--border);
+      padding: 13px;
+      border-radius: 14px;
+      font-size: 14px;
+      color: #334155;
+      font-weight: 800;
+    }
+
+    .dashboard-preview {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 26px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dashboard-preview::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      background: rgba(37, 99, 235, 0.13);
+      border-radius: 50%;
+      right: -80px;
+      top: -90px;
+    }
+
+    .preview-top {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .preview-title h3 {
+      color: var(--dark);
+      font-size: 18px;
+    }
+
+    .preview-title p {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .status-pill {
+      background: #dcfce7;
+      color: #166534;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .mini-metrics {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .mini-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: 17px;
+    }
+
+    .mini-card p {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .mini-card h2 {
+      color: var(--dark);
+      margin-top: 4px;
+      font-size: 25px;
+    }
+
+    .chart-box {
+      position: relative;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .chart-bars {
+      height: 120px;
+      display: flex;
+      gap: 12px;
+      align-items: end;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+    }
+
+    .bar {
+      flex: 1;
+      border-radius: 10px 10px 0 0;
+      background: linear-gradient(180deg, var(--blue), var(--cyan));
+      min-height: 28px;
+    }
+
+    .bar:nth-child(1) { height: 48%; }
+    .bar:nth-child(2) { height: 62%; }
+    .bar:nth-child(3) { height: 42%; }
+    .bar:nth-child(4) { height: 76%; }
+    .bar:nth-child(5) { height: 68%; }
+    .bar:nth-child(6) { height: 90%; }
+
+    .chart-labels {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      margin-top: 8px;
+    }
+
+    section {
+      padding: 48px 9%;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+
+    .section-kicker {
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .section-title {
+      font-size: 34px;
+      color: var(--dark);
+      letter-spacing: -0.8px;
+      line-height: 1.2;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 660px;
+      font-weight: 700;
+    }
+
+    .summary {
+      background: rgba(255, 255, 255, 0.88);
+      padding: 28px;
+      border-radius: 22px;
+      box-shadow: var(--soft-shadow);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+    }
+
+    .summary p {
+      font-weight: 600;
+      color: #475569;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .skill {
+      background: #e0ecff;
+      color: #1e3a8a;
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .metric {
+      background: white;
+      padding: 24px;
+      border-radius: 22px;
+      box-shadow: var(--soft-shadow);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric::after {
+      content: "";
+      position: absolute;
+      right: -35px;
+      top: -35px;
+      width: 90px;
+      height: 90px;
+      background: rgba(37, 99, 235, 0.10);
+      border-radius: 50%;
+    }
+
+    .metric h2 {
+      color: var(--blue);
+      font-size: 34px;
+      margin-bottom: 5px;
+    }
+
+    .metric p {
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 26px;
+      border-radius: 24px;
+      box-shadow: var(--soft-shadow);
+      border: 1px solid var(--border);
+      transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--blue), var(--cyan));
+    }
+
+    .card.in-progress::before {
+      background: linear-gradient(180deg, var(--orange), var(--purple));
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eff6ff;
+      color: var(--blue);
+      border-radius: 15px;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--dark);
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #475569;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #334155;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin: 4px 4px 0 0;
+      font-weight: 900;
+    }
+
+    .case-study {
+      background: white;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--soft-shadow);
+      border: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+
+    .case-study.dark {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .case-study.dark::after {
+      content: "";
+      position: absolute;
+      right: -110px;
+      top: -110px;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
+
+    .case-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .case-study h2 {
+      font-size: 34px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      color: var(--dark);
+    }
+
+    .case-study.dark h2 {
+      color: white;
+    }
+
+    .case-study p {
+      color: #475569;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .case-study.dark p {
+      color: #dbeafe;
+    }
+
+    .case-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .case-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 14px;
+      border-radius: 15px;
+      color: #334155;
+      font-weight: 800;
+    }
+
+    .case-study.dark .case-item {
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #f8fafc;
+    }
+
+    .case-tags {
+      margin-top: 18px;
+    }
+
+    .case-tags span {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #334155;
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      margin: 4px 4px 0 0;
+    }
+
+    .case-study.dark .case-tags span {
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: white;
+    }
+
+    .mock-screen {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 22px;
+      padding: 18px;
+      color: var(--dark);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.20);
+    }
+
+    .mock-screen.light {
+      box-shadow: var(--soft-shadow);
+      border: 1px solid #e2e8f0;
+    }
+
+    .screen-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .screen-header h3 {
+      font-size: 17px;
+      color: var(--dark);
+    }
+
+    .screen-filter {
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .screen-kpis {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .screen-kpi {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 13px;
+      border-radius: 15px;
+    }
+
+    .screen-kpi p {
+      color: #64748b;
+      font-size: 12px;
+      margin-bottom: 4px;
+      font-weight: 900;
+    }
+
+    .screen-kpi h4 {
+      font-size: 22px;
+      color: #0f172a;
+    }
+
+    .screen-table {
+      background: #f8fafc;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+
+    .screen-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 10px 12px;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .screen-row:first-child {
+      background: #e0ecff;
+      color: #1e3a8a;
+    }
+
+    .screen-row:last-child {
+      border-bottom: none;
+    }
+
+    .code-window {
+      background: #0f172a;
+      color: #dbeafe;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .code-top {
+      background: #1e293b;
+      padding: 12px 16px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #94a3b8;
+    }
+
+    .code-content {
+      padding: 20px;
+      font-family: Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.8;
+      overflow-x: auto;
+    }
+
+    .code-line span {
+      color: #38bdf8;
+    }
+
+    .code-comment {
+      color: #94a3b8;
+    }
+
+    .pipeline-steps {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pipeline-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      align-items: start;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .pipeline-number {
+      width: 48px;
+      height: 48px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .pipeline-step h3 {
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .pipeline-step p {
+      color: #64748b;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .dashboard-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .mini-dashboard {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .mini-dashboard h3 {
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .mini-dashboard .small-bar {
+      height: 10px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      border-radius: 999px;
+      margin: 10px 0;
+    }
+
+    .mini-dashboard .small-bar.short {
+      width: 70%;
+    }
+
+    .mini-dashboard .small-bar.medium {
+      width: 85%;
+    }
+
+    .mini-dashboard .small-bar.long {
+      width: 100%;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .step h3 {
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .contact-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 22px;
+      border-radius: 20px;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .contact-card h3 {
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .contact-card a,
+    .contact-card p {
+      color: var(--blue-dark);
+      font-weight: 800;
+      word-break: break-word;
+      text-decoration: none;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #cbd5e1;
+      padding: 26px 9%;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 950px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics,
+      .workflow,
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .navbar {
+        padding: 13px 6%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 45px 6% 35px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      section {
+        padding: 35px 6%;
+      }
+
+      .cards,
+      .metrics,
+      .workflow,
+      .contact-grid,
+      .hero-points,
+      .case-grid,
+      .screen-kpis,
+      .dashboard-duo {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .case-study {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Shivendu Vimal</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#case-studies">Case Studies</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+      <div>
+        <div class="badge">Insurance Analytics • MIS Revenue • IRDA Data • Dashboards</div>
+
+        <h1>
+          Building end-to-end <span>insurance analytics</span> systems from raw data to dashboards.
+        </h1>
+
+        <p class="hero-subtitle">
+          I work on insurance MIS revenue reporting, IRDA data preparation, SQL-based commission logic,
+          and stakeholder dashboards using Trino SQL, Python, Google Sheets, Apps Script, HTML, CSS, and JavaScript.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn" href="#projects">View Projects →</a>
+          <a class="btn secondary" href="#case-studies">View Case Studies</a>
+        </div>
+
+        <div class="hero-points">
+          <div class="hero-point">✓ MIS revenue calculation using 1000+ line Trino SQL</div>
+          <div class="hero-point">✓ 3-year IRDA data pipeline from Excel to Trino</div>
+          <div class="hero-point">✓ MIS and IRDA dashboards using Apps Script</div>
+          <div class="hero-point">✓ Sanitized portfolio without company data</div>
+        </div>
+      </div>
+
+      <div class="dashboard-preview">
+        <div class="preview-top">
+          <div class="preview-title">
+            <h3>Insurance Analytics Preview</h3>
+            <p>Sanitized sample visualization</p>
+          </div>
+          <div class="status-pill">LIVE STYLE</div>
+        </div>
+
+        <div class="mini-metrics">
+          <div class="mini-card">
+            <p>Policies</p>
+            <h2>128K</h2>
+          </div>
+
+          <div class="mini-card">
+            <p>Premium</p>
+            <h2>₹42L</h2>
+          </div>
+
+          <div class="mini-card">
+            <p>Revenue</p>
+            <h2>₹8.4L</h2>
+          </div>
+
+          <div class="mini-card">
+            <p>Growth</p>
+            <h2>+18%</h2>
+          </div>
+        </div>
+
+        <div class="chart-box">
+          <div class="chart-bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+
+          <div class="chart-labels">
+            <span>Jan</span>
+            <span>Feb</span>
+            <span>Mar</span>
+            <span>Apr</span>
+            <span>May</span>
+            <span>Jun</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="summary">
+        <div class="section-kicker">About Me</div>
+        <h2 class="section-title">Insurance MIS, IRDA data preparation, revenue logic, and dashboards.</h2>
+
+        <p>
+          My core work is focused on converting complicated insurance data into reliable reporting outputs.
+          I build revenue reports, prepare IRDA datasets, write SQL logic for premium and commission calculations,
+          and create dashboard views that help stakeholders understand business performance quickly.
+        </p>
+
+        <div class="skills">
+          <span class="skill">Trino SQL</span>
+          <span class="skill">MIS Revenue</span>
+          <span class="skill">Commission Logic</span>
+          <span class="skill">Python</span>
+          <span class="skill">CSV Processing</span>
+          <span class="skill">S3</span>
+          <span class="skill">Google Sheets</span>
+          <span class="skill">Apps Script</span>
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Dashboarding</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Portfolio Snapshot</div>
+          <h2 class="section-title">Three main work areas</h2>
+        </div>
+        <p class="section-desc">
+          These are sanitized, portfolio-friendly highlights. They describe the type and scale of work without exposing company data.
+        </p>
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <h2>1000+</h2>
+          <p>Lines of Revenue SQL Logic</p>
+        </div>
+
+        <div class="metric">
+          <h2>3 FYs</h2>
+          <p>IRDA Data Prepared</p>
+        </div>
+
+        <div class="metric">
+          <h2>2</h2>
+          <p>Dashboard Systems Built</p>
+        </div>
+
+        <div class="metric">
+          <h2>100%</h2>
+          <p>Sanitized Portfolio Data</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Selected Work</div>
+          <h2 class="section-title">Portfolio Projects</h2>
+        </div>
+        <p class="section-desc">
+          The portfolio focuses on three main areas: MIS revenue reporting, IRDA data preparation, and dashboard development.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-icon">💰</div>
+          <h3>MIS Revenue Report Engine</h3>
+          <p>
+            Built a complex insurance revenue reporting logic using 1000+ lines of Trino SQL.
+            The report calculates policy-level revenue across retail MIS and group policies
+            by handling multiple insurers, product types, and complicated commission rate rules.
+          </p>
+          <span class="tag">Trino SQL</span>
+          <span class="tag">MIS Revenue</span>
+          <span class="tag">Commission Logic</span>
+          <span class="tag">Retail</span>
+          <span class="tag">Group Policies</span>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🗂️</div>
+          <h3>3-Year IRDA Data Preparation Pipeline</h3>
+          <p>
+            Prepared IRDA data for three financial years from scratch by converting Excel files
+            into selective-column CSVs using Python, storing them in S3, creating Trino tables,
+            and performing further SQL-based analysis.
+          </p>
+          <span class="tag">Python</span>
+          <span class="tag">CSV Processing</span>
+          <span class="tag">S3</span>
+          <span class="tag">Trino</span>
+          <span class="tag">IRDA Reporting</span>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>MIS & IRDA Dashboard Suite</h3>
+          <p>
+            Built dashboard views for MIS revenue and IRDA reporting using Google Sheets,
+            Google Apps Script, HTML, CSS, and JavaScript to present KPIs, trends,
+            filters, and stakeholder-ready summaries.
+          </p>
+          <span class="tag">Google Sheets</span>
+          <span class="tag">Apps Script</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Dashboard</span>
+        </div>
+
+        <div class="card in-progress">
+          <div class="card-icon">🛠️</div>
+          <h3>Insurer Reconciliation Automation</h3>
+          <p>
+            In-progress automation work for insurer-wise reconciliation. This includes separate
+            scripts for different insurer formats, policy matching, cancellation handling,
+            duplicate cases, and commission difference checks.
+          </p>
+          <span class="tag">In Progress</span>
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Reconciliation</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="case-studies">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Case Studies</div>
+          <h2 class="section-title">Main portfolio stories</h2>
+        </div>
+        <p class="section-desc">
+          These three case studies are the main explanation points for interviews, stakeholder discussions, and GitHub portfolio review.
+        </p>
+      </div>
+
+      <div class="case-study dark">
+        <div class="case-grid">
+
+          <div>
+            <div class="badge" style="background: rgba(255,255,255,0.12); color: white; border-color: rgba(255,255,255,0.2);">
+              Case Study 1
+            </div>
+
+            <h2>MIS Revenue Report Engine</h2>
+
+            <p>
+              Built a policy-level revenue reporting engine for insurance MIS using complex Trino SQL.
+              The core challenge was handling different insurers, product categories, retail policies,
+              group policies, and complicated commission rate rules in one reporting logic.
+            </p>
+
+            <div class="case-list">
+              <div class="case-item">
+                Problem: Revenue calculation rules differed by insurer, product type, policy category, and commission structure.
+              </div>
+
+              <div class="case-item">
+                Solution: Created a 1000+ line Trino SQL report to compute premium, commission, reward, and final revenue at policy level.
+              </div>
+
+              <div class="case-item">
+                Output: Produced MIS-ready revenue data that could be used for reporting, dashboarding, and business review.
+              </div>
+            </div>
+
+            <div class="case-tags">
+              <span>Trino SQL</span>
+              <span>1000+ Lines SQL</span>
+              <span>Retail MIS</span>
+              <span>Group Policies</span>
+              <span>Commission Rates</span>
+              <span>Revenue Reporting</span>
+            </div>
+          </div>
+
+          <div class="code-window">
+            <div class="code-top">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+
+            <div class="code-content">
+              <div class="code-comment">-- Sanitized revenue-reporting pattern</div>
+              <div class="code-line"><span>1.</span> Extract retail and group policy records</div>
+              <div class="code-line"><span>2.</span> Classify insurer, product, segment and policy type</div>
+              <div class="code-line"><span>3.</span> Apply OD, TP, reward and commission rate logic</div>
+              <div class="code-line"><span>4.</span> Calculate policy-level premium and revenue</div>
+              <div class="code-line"><span>5.</span> Validate totals against MIS reporting checks</div>
+              <div class="code-line"><span>6.</span> Prepare final revenue output for dashboards</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="case-study">
+        <div class="case-grid">
+
+          <div>
+            <div class="badge">Case Study 2</div>
+
+            <h2>3-Year IRDA Data Preparation Pipeline</h2>
+
+            <p>
+              Prepared IRDA data for three financial years from scratch. The work started from Excel files,
+              moved through Python-based selective column extraction, CSV creation, S3 storage, Trino table creation,
+              and final SQL analysis.
+            </p>
+
+            <div class="case-list">
+              <div class="case-item">
+                Problem: IRDA data was available in Excel-based formats and needed to be converted into structured analytics-ready tables.
+              </div>
+
+              <div class="case-item">
+                Solution: Used Python to extract required columns, convert Excel into clean CSV files, and store them in an S3 path.
+              </div>
+
+              <div class="case-item">
+                Output: Created Trino tables on top of the processed files and used SQL for year-wise IRDA analysis.
+              </div>
+            </div>
+
+            <div class="case-tags">
+              <span>Python</span>
+              <span>Excel to CSV</span>
+              <span>Selective Columns</span>
+              <span>S3</span>
+              <span>Trino Tables</span>
+              <span>IRDA Analysis</span>
+            </div>
+          </div>
+
+          <div class="pipeline-steps">
+            <div class="pipeline-step">
+              <div class="pipeline-number">1</div>
+              <div>
+                <h3>Excel Files</h3>
+                <p>Started with year-wise IRDA Excel files containing raw reporting data.</p>
+              </div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="pipeline-number">2</div>
+              <div>
+                <h3>Python Processing</h3>
+                <p>Selected only required columns and converted the files into clean CSV outputs.</p>
+              </div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="pipeline-number">3</div>
+              <div>
+                <h3>S3 Storage</h3>
+                <p>Stored processed CSV files in S3 paths for table creation and repeatable access.</p>
+              </div>
+            </div>
+
+            <div class="pipeline-step">
+              <div class="pipeline-number">4</div>
+              <div>
+                <h3>Trino Analysis</h3>
+                <p>Created Trino tables and performed SQL-based analysis on top of prepared data.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="case-study">
+        <div class="case-grid">
+
+          <div>
+            <div class="badge">Case Study 3</div>
+
+            <h2>MIS & IRDA Dashboard Suite</h2>
+
+            <p>
+              Built dashboard views for both MIS revenue reporting and IRDA reporting using Google Sheets,
+              Google Apps Script, HTML, CSS, and JavaScript. The goal was to make complex reporting outputs
+              easier for stakeholders to consume.
+            </p>
+
+            <div class="case-list">
+              <div class="case-item">
+                Problem: Stakeholders needed simple dashboard views instead of manually checking raw sheets and reports.
+              </div>
+
+              <div class="case-item">
+                Solution: Used Google Sheets as the data layer and Apps Script with HTML/CSS/JS for dashboard presentation.
+              </div>
+
+              <div class="case-item">
+                Output: Created KPI cards, trend views, filters, month comparisons, and stakeholder-ready summaries.
+              </div>
+            </div>
+
+            <div class="case-tags">
+              <span>Google Sheets</span>
+              <span>Apps Script</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Dashboarding</span>
+            </div>
+          </div>
+
+          <div class="mock-screen light">
+            <div class="screen-header">
+              <h3>Dashboard Suite</h3>
+              <div class="screen-filter">Sanitized View</div>
+            </div>
+
+            <div class="dashboard-duo">
+              <div class="mini-dashboard">
+                <h3>MIS Revenue</h3>
+                <div class="small-bar long"></div>
+                <div class="small-bar medium"></div>
+                <div class="small-bar short"></div>
+                <p style="color:#64748b; font-weight:800; margin-bottom:0;">Premium, revenue, commission and trends</p>
+              </div>
+
+              <div class="mini-dashboard">
+                <h3>IRDA Report</h3>
+                <div class="small-bar medium"></div>
+                <div class="small-bar long"></div>
+                <div class="small-bar short"></div>
+                <p style="color:#64748b; font-weight:800; margin-bottom:0;">Policy, premium and reporting summaries</p>
+              </div>
+            </div>
+
+            <div class="screen-kpis" style="margin-top:15px;">
+              <div class="screen-kpi">
+                <p>KPI Cards</p>
+                <h4>Ready</h4>
+              </div>
+
+              <div class="screen-kpi">
+                <p>Filters</p>
+                <h4>Added</h4>
+              </div>
+
+              <div class="screen-kpi">
+                <p>Trends</p>
+                <h4>Shown</h4>
+              </div>
+
+              <div class="screen-kpi">
+                <p>Data</p>
+                <h4>Sanitized</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="case-study">
+        <div class="case-grid">
+
+          <div>
+            <div class="badge" style="background:#fff7ed; color:#c2410c; border-color:#fed7aa;">
+              In Progress
+            </div>
+
+            <h2>Insurer Reconciliation Automation</h2>
+
+            <p>
+              This work is still in progress and is kept as a supporting project in the portfolio.
+              The goal is to build separate reconciliation scripts for different insurers because each insurer file
+              has different formats, matching nuances, cancellation cases, duplicate policies, and commission difference scenarios.
+            </p>
+
+            <div class="case-list">
+              <div class="case-item">
+                Current Focus: Insurer-wise scripts with custom matching and validation logic.
+              </div>
+
+              <div class="case-item">
+                Key Complexity: Different Excel formats, policy number variations, cancellation cases, and short commission checks.
+              </div>
+
+              <div class="case-item">
+                Portfolio Positioning: Supporting project, not the main focus until fully completed.
+              </div>
+            </div>
+
+            <div class="case-tags">
+              <span>In Progress</span>
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>Excel Automation</span>
+              <span>Policy Matching</span>
+            </div>
+          </div>
+
+          <div class="code-window">
+            <div class="code-top">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+
+            <div class="code-content">
+              <div class="code-comment"># Sanitized reconciliation workflow</div>
+              <div class="code-line"><span>1.</span> Read insurer-specific Excel format</div>
+              <div class="code-line"><span>2.</span> Standardize policy numbers and dates</div>
+              <div class="code-line"><span>3.</span> Match insurer data with internal MIS</div>
+              <div class="code-line"><span>4.</span> Identify billed, unbilled and cancelled cases</div>
+              <div class="code-line"><span>5.</span> Check duplicate and short commission cases</div>
+              <div class="code-line"><span>6.</span> Export final reconciliation output</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <section id="workflow">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">How I Work</div>
+          <h2 class="section-title">From raw data to stakeholder dashboard</h2>
+        </div>
+      </div>
+
+      <div class="workflow">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Extract</h3>
+          <p>Collect data from Excel, MIS outputs, SQL tables, and reporting sources.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Prepare</h3>
+          <p>Clean files, convert formats, select required columns, and create analytics-ready data.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Calculate</h3>
+          <p>Apply SQL logic for premium, commission, reward, revenue, and policy-level reporting.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Present</h3>
+          <p>Build dashboards, final reports, and stakeholder-ready summaries.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="summary">
+        <div class="section-kicker">Portfolio Explanation</div>
+        <h2 class="section-title">How I explain this portfolio</h2>
+        <p>
+          My portfolio focuses on three major insurance analytics projects. First, I built a MIS revenue report engine
+          using Trino SQL to compute policy-level revenue across multiple insurers, retail policies, group policies,
+          and complicated commission rate rules. Second, I prepared three years of IRDA data from scratch using Python,
+          CSV conversion, S3 storage, Trino table creation, and SQL analysis. Third, I built MIS and IRDA dashboards
+          using Google Sheets, Apps Script, HTML, CSS, and JavaScript so stakeholders could view KPIs, trends,
+          filters, and summarized business performance easily.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Let’s connect</h2>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Email</h3>
+          <a href="mailto:shivenduvimal23@gmail.com">shivenduvimal23@gmail.com</a>
+        </div>
+
+        <div class="contact-card">
+          <h3>LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/shivendu-vimal-005736209" target="_blank">
+            Shivendu Vimal
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <h3>GitHub</h3>
+          <p>Will be added after repository setup</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Shivendu Vimal. Portfolio created with HTML, CSS, and JavaScript.</p>
+  </footer>
+
+</body>
+</html>
