@@ -3,1512 +3,747 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shivendu Vimal | Insurance Analytics Portfolio</title>
+  <meta name="theme-color" content="#08111f" />
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="description" content="Shivendu Vimal is a fintech data and business intelligence analyst specialising in SQL, Python, insurance analytics, revenue intelligence, regulatory reporting, dashboards, reconciliation and payments risk." />
+  <meta name="keywords" content="Shivendu Vimal, Data Analyst, Business Analyst, BI Analyst, Fintech Analytics, Insurance Analytics, Payments Risk, SQL, Trino, Hive, Python, Pandas, Snowflake, S3, Superset, Google Apps Script, Data Quality, Reconciliation" />
+  <meta name="author" content="Shivendu Vimal" />
+  <meta property="og:title" content="Shivendu Vimal | Fintech Data & Business Intelligence" />
+  <meta property="og:description" content="SQL, Python, data pipelines, revenue intelligence, regulatory analytics, dashboards and payments-risk projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shivenduvimal23-code.github.io/insurance-analytics-portfolio/" />
+  <meta property="og:image" content="https://shivenduvimal23-code.github.io/insurance-analytics-portfolio/portfolio-preview.png" />
+  <link rel="canonical" href="https://shivenduvimal23-code.github.io/insurance-analytics-portfolio/" />
+  <title>Shivendu Vimal | Fintech Data & Business Intelligence</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shivendu Vimal",
+    "jobTitle": "Business Analyst | Data & Business Intelligence",
+    "url": "https://shivenduvimal23-code.github.io/insurance-analytics-portfolio/",
+    "email": "mailto:shivenduvimal23@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/shivendu-vimal-005736209",
+      "https://github.com/shivenduvimal23-code"
+    ],
+    "knowsAbout": [
+      "SQL", "Python", "Trino", "Hive", "Snowflake", "Amazon S3",
+      "Data Analytics", "Business Intelligence", "Insurance Analytics",
+      "Payments Risk", "Data Quality", "Reconciliation", "Dashboarding"
+    ]
+  }
+  </script>
 
   <style>
     :root {
-      --bg: #eef4ff;
-      --dark: #0f172a;
-      --text: #172033;
-      --muted: #64748b;
-      --blue: #2563eb;
-      --blue-dark: #1e3a8a;
-      --cyan: #0ea5e9;
-      --green: #16a34a;
-      --purple: #7c3aed;
-      --orange: #f97316;
-      --card: #ffffff;
-      --border: rgba(15, 23, 42, 0.09);
-      --shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
-      --soft-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+      --bg: #07101d;
+      --bg-soft: #0b1727;
+      --panel: rgba(14, 30, 49, 0.82);
+      --panel-strong: #0e1d30;
+      --text: #f4f8ff;
+      --muted: #9fb0c5;
+      --line: rgba(164, 190, 220, 0.16);
+      --primary: #55d6be;
+      --primary-2: #5ea7ff;
+      --accent: #f8c15c;
+      --danger: #ff7e91;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+      --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.20), transparent 35%),
-        radial-gradient(circle at top right, rgba(14, 165, 233, 0.20), transparent 30%),
-        var(--bg);
+      margin: 0;
+      min-width: 320px;
       color: var(--text);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(85, 214, 190, 0.12), transparent 27%),
+        radial-gradient(circle at 90% 3%, rgba(94, 167, 255, 0.14), transparent 28%),
+        linear-gradient(180deg, #07101d 0%, #081321 52%, #07101d 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { max-width: 100%; }
+    ::selection { background: rgba(85, 214, 190, 0.25); }
 
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 9%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 999;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: #041018;
+      background: var(--primary);
+      transform: translateY(-160%);
+      transition: transform 0.2s ease;
     }
+    .skip-link:focus { transform: translateY(0); }
 
-    .logo {
-      font-weight: 900;
-      color: var(--dark);
-      letter-spacing: -0.5px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      text-decoration: none;
-    }
-
-    .hero {
-      padding: 70px 9% 55px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .badge {
+    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .section { padding: 94px 0; position: relative; }
+    .section-tight { padding: 40px 0; }
+    .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(37, 99, 235, 0.10);
-      border: 1px solid rgba(37, 99, 235, 0.20);
-      color: var(--blue-dark);
-      padding: 8px 13px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 900;
-      margin-bottom: 20px;
+      gap: 9px;
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
-
-    .hero h1 {
-      font-size: 54px;
-      line-height: 1.05;
-      color: var(--dark);
-      letter-spacing: -1.8px;
-      margin-bottom: 18px;
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-2));
     }
-
-    .hero h1 span {
-      color: var(--blue);
+    .section-head { max-width: 760px; margin-bottom: 38px; }
+    .section-head h2 {
+      margin: 10px 0 12px;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
     }
+    .section-head p { margin: 0; color: var(--muted); font-size: 1.03rem; }
 
-    .hero-subtitle {
-      font-size: 18px;
-      max-width: 720px;
-      color: #475569;
-      margin-bottom: 28px;
-      font-weight: 600;
+    .nav-wrap {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      padding: 14px 0;
+      transition: 0.25s ease;
     }
-
-    .btn-row {
+    .nav-wrap.scrolled {
+      background: rgba(7, 16, 29, 0.82);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+    .nav {
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 850; letter-spacing: -0.02em; }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(85, 214, 190, 0.35);
+      border-radius: 14px;
+      color: #04131a;
+      background: linear-gradient(135deg, var(--primary), #9af4df);
+      box-shadow: 0 10px 30px rgba(85, 214, 190, 0.22);
+      font-size: 0.88rem;
+    }
+    .brand small { display: block; color: var(--muted); font-weight: 550; font-size: 0.72rem; letter-spacing: 0.01em; }
+    .nav-links { display: flex; align-items: center; gap: 24px; color: #c8d5e5; font-size: 0.91rem; font-weight: 650; }
+    .nav-links a { transition: color 0.2s ease; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .nav-cta {
+      padding: 10px 15px;
+      color: #06131a !important;
+      background: var(--primary);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(85, 214, 190, 0.18);
+    }
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      color: var(--text);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      cursor: pointer;
     }
 
+    .hero { min-height: 100vh; display: grid; align-items: center; padding: 132px 0 76px; }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 64px; align-items: center; }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      color: #cbe9e4;
+      background: rgba(85, 214, 190, 0.08);
+      border: 1px solid rgba(85, 214, 190, 0.22);
+      border-radius: 999px;
+      font-size: 0.83rem;
+      font-weight: 700;
+    }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 5px rgba(85, 214, 190, 0.12); }
+    .hero h1 {
+      margin: 22px 0 20px;
+      font-size: clamp(3.15rem, 7vw, 6.65rem);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
+      max-width: 800px;
+    }
+    .hero h1 span {
+      color: transparent;
+      background: linear-gradient(95deg, var(--primary), #b9ffe9 45%, var(--primary-2));
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+    .hero-copy { max-width: 690px; color: #b7c5d7; font-size: clamp(1.02rem, 1.7vw, 1.22rem); }
+    .hero-copy strong { color: var(--text); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      background: var(--blue);
-      color: white;
-      padding: 13px 20px;
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: 900;
-      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
-    }
-
-    .btn.secondary {
-      background: white;
-      color: var(--blue-dark);
-      border: 1px solid rgba(37, 99, 235, 0.18);
-      box-shadow: var(--soft-shadow);
-    }
-
-    .hero-points {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(160px, 1fr));
-      gap: 12px;
-      max-width: 700px;
-    }
-
-    .hero-point {
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid var(--border);
-      padding: 13px;
+      gap: 9px;
+      min-height: 48px;
+      padding: 0 18px;
+      border: 1px solid transparent;
       border-radius: 14px;
-      font-size: 14px;
-      color: #334155;
       font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #04131a; background: linear-gradient(135deg, var(--primary), #a5f2df); box-shadow: 0 13px 34px rgba(85, 214, 190, 0.19); }
+    .btn-secondary { color: var(--text); background: rgba(255,255,255,0.035); border-color: var(--line); }
+    .btn-secondary:hover { border-color: rgba(94, 167, 255, 0.42); }
+    .role-strip { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 28px; }
+    .role-strip span { padding: 7px 10px; color: #aebdd0; background: rgba(255,255,255,0.035); border: 1px solid var(--line); border-radius: 10px; font-size: 0.77rem; font-weight: 700; }
 
-    .dashboard-preview {
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      border-radius: 26px;
-      padding: 22px;
-      box-shadow: var(--shadow);
+    .hero-panel {
       position: relative;
+      padding: 24px;
+      border: 1px solid rgba(148, 180, 218, 0.18);
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(16, 35, 56, 0.9), rgba(8, 19, 33, 0.88));
+      box-shadow: var(--shadow);
       overflow: hidden;
     }
-
-    .dashboard-preview::before {
+    .hero-panel::before {
       content: "";
       position: absolute;
       width: 240px;
       height: 240px;
-      background: rgba(37, 99, 235, 0.13);
-      border-radius: 50%;
-      right: -80px;
-      top: -90px;
-    }
-
-    .preview-top {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-
-    .preview-title h3 {
-      color: var(--dark);
-      font-size: 18px;
-    }
-
-    .preview-title p {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .status-pill {
-      background: #dcfce7;
-      color: #166534;
-      padding: 7px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .mini-metrics {
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .mini-card {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 15px;
-      border-radius: 17px;
-    }
-
-    .mini-card p {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .mini-card h2 {
-      color: var(--dark);
-      margin-top: 4px;
-      font-size: 25px;
-    }
-
-    .chart-box {
-      position: relative;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 18px;
-      height: 180px;
-      overflow: hidden;
-    }
-
-    .chart-bars {
-      height: 120px;
-      display: flex;
-      gap: 12px;
-      align-items: end;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 8px;
-    }
-
-    .bar {
-      flex: 1;
-      border-radius: 10px 10px 0 0;
-      background: linear-gradient(180deg, var(--blue), var(--cyan));
-      min-height: 28px;
-    }
-
-    .bar:nth-child(1) { height: 48%; }
-    .bar:nth-child(2) { height: 62%; }
-    .bar:nth-child(3) { height: 42%; }
-    .bar:nth-child(4) { height: 76%; }
-    .bar:nth-child(5) { height: 68%; }
-    .bar:nth-child(6) { height: 90%; }
-
-    .chart-labels {
-      display: flex;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 900;
-      margin-top: 8px;
-    }
-
-    section {
-      padding: 48px 9%;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 20px;
-      margin-bottom: 22px;
-    }
-
-    .section-kicker {
-      color: var(--blue);
-      font-weight: 900;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-    }
-
-    .section-title {
-      font-size: 34px;
-      color: var(--dark);
-      letter-spacing: -0.8px;
-      line-height: 1.2;
-    }
-
-    .section-desc {
-      color: var(--muted);
-      max-width: 660px;
-      font-weight: 700;
-    }
-
-    .summary {
-      background: rgba(255, 255, 255, 0.88);
-      padding: 28px;
-      border-radius: 22px;
-      box-shadow: var(--soft-shadow);
-      border: 1px solid rgba(255, 255, 255, 0.75);
-    }
-
-    .summary p {
-      font-weight: 600;
-      color: #475569;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .skill {
-      background: #e0ecff;
-      color: #1e3a8a;
-      padding: 9px 13px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 900;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .metric {
-      background: white;
-      padding: 24px;
-      border-radius: 22px;
-      box-shadow: var(--soft-shadow);
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .metric::after {
-      content: "";
-      position: absolute;
-      right: -35px;
-      top: -35px;
-      width: 90px;
-      height: 90px;
-      background: rgba(37, 99, 235, 0.10);
-      border-radius: 50%;
-    }
-
-    .metric h2 {
-      color: var(--blue);
-      font-size: 34px;
-      margin-bottom: 5px;
-    }
-
-    .metric p {
-      color: var(--muted);
-      font-weight: 900;
-      font-size: 14px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .card {
-      background: white;
-      padding: 26px;
-      border-radius: 24px;
-      box-shadow: var(--soft-shadow);
-      border: 1px solid var(--border);
-      transition: 0.25s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 6px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--blue), var(--cyan));
-    }
-
-    .card.in-progress::before {
-      background: linear-gradient(180deg, var(--orange), var(--purple));
-    }
-
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #eff6ff;
-      color: var(--blue);
-      border-radius: 15px;
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: var(--dark);
-      font-size: 21px;
-    }
-
-    .card p {
-      color: #475569;
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #f1f5f9;
-      color: #334155;
-      padding: 7px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      margin: 4px 4px 0 0;
-      font-weight: 900;
-    }
-
-    .case-study {
-      background: white;
-      border-radius: 28px;
-      padding: 34px;
-      box-shadow: var(--soft-shadow);
-      border: 1px solid var(--border);
-      margin-bottom: 28px;
-    }
-
-    .case-study.dark {
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
-      color: white;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .case-study.dark::after {
-      content: "";
-      position: absolute;
       right: -110px;
       top: -110px;
-      width: 300px;
-      height: 300px;
-      background: rgba(255, 255, 255, 0.08);
       border-radius: 50%;
+      background: rgba(94, 167, 255, 0.15);
+      filter: blur(3px);
     }
+    .panel-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; position: relative; }
+    .panel-label { color: var(--muted); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; }
+    .live-pill { padding: 5px 8px; color: var(--primary); background: rgba(85, 214, 190, 0.08); border-radius: 8px; font-size: 0.68rem; font-weight: 800; }
+    .metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0; position: relative; }
+    .metric { padding: 15px; background: rgba(255,255,255,0.035); border: 1px solid var(--line); border-radius: 16px; }
+    .metric span { display: block; color: var(--muted); font-size: 0.72rem; }
+    .metric strong { display: block; margin-top: 3px; font-size: 1.45rem; letter-spacing: -0.04em; }
+    .metric small { color: var(--primary); font-size: 0.7rem; }
+    .chart-card { padding: 15px; background: rgba(5,13,23,0.58); border: 1px solid var(--line); border-radius: 18px; position: relative; }
+    .chart-head { display: flex; align-items: end; justify-content: space-between; margin-bottom: 8px; }
+    .chart-head strong { font-size: 0.86rem; }
+    .chart-head span { color: var(--primary); font-size: 0.72rem; }
+    .chart { width: 100%; height: 150px; overflow: visible; }
+    .chart-grid line { stroke: rgba(176,197,222,0.10); stroke-width: 1; }
+    .chart-area { fill: url(#areaFill); }
+    .chart-line { fill: none; stroke: var(--primary); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 7px 8px rgba(85,214,190,.18)); }
+    .chart-dot { fill: var(--bg); stroke: var(--primary); stroke-width: 2; }
+    .panel-foot { display: flex; justify-content: space-between; gap: 14px; margin-top: 14px; color: var(--muted); font-size: 0.72rem; }
+    .panel-foot strong { color: #dce7f4; }
 
-    .case-grid {
+    .signal-bar { border-block: 1px solid var(--line); background: rgba(255,255,255,0.018); }
+    .signals { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .signal { padding: 27px 24px; border-right: 1px solid var(--line); }
+    .signal:last-child { border-right: 0; }
+    .signal strong { display: block; font-size: clamp(1.55rem, 3vw, 2.2rem); letter-spacing: -0.05em; }
+    .signal span { color: var(--muted); font-size: 0.78rem; }
+
+    .about-grid { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 64px; align-items: start; }
+    .profile-card { position: sticky; top: 110px; padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow); }
+    .avatar { display: grid; place-items: center; width: 82px; height: 82px; border-radius: 24px; color: #03151b; background: linear-gradient(135deg, var(--primary), #b9ffe9); font-size: 1.55rem; font-weight: 900; box-shadow: 0 16px 40px rgba(85,214,190,.18); }
+    .profile-card h3 { margin: 20px 0 2px; font-size: 1.5rem; }
+    .profile-card > p { margin: 0; color: var(--muted); }
+    .profile-meta { display: grid; gap: 12px; margin-top: 22px; }
+    .profile-row { display: flex; align-items: flex-start; gap: 11px; padding-top: 12px; border-top: 1px solid var(--line); }
+    .profile-row span { color: var(--muted); font-size: 0.78rem; }
+    .profile-row strong { display: block; color: #e7eef8; font-size: 0.88rem; }
+    .about-content h2 { margin: 8px 0 22px; font-size: clamp(2.1rem, 4.5vw, 3.7rem); line-height: 1.06; letter-spacing: -0.045em; }
+    .about-content > p { color: #b5c4d6; font-size: 1.05rem; }
+    .value-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 30px; }
+    .value-card { padding: 20px; border: 1px solid var(--line); border-radius: 17px; background: rgba(255,255,255,0.025); }
+    .value-card .icon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 11px; background: rgba(94,167,255,0.10); color: var(--primary-2); font-weight: 900; }
+    .value-card h3 { margin: 12px 0 5px; font-size: 1rem; }
+    .value-card p { margin: 0; color: var(--muted); font-size: 0.86rem; }
+
+    .skills-shell { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .skill-group { padding: 24px; border: 1px solid var(--line); border-radius: 20px; background: rgba(13, 29, 48, 0.72); }
+    .skill-group h3 { margin: 0 0 5px; font-size: 1rem; }
+    .skill-group > p { margin: 0 0 18px; color: var(--muted); font-size: 0.8rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { padding: 7px 10px; border-radius: 9px; border: 1px solid var(--line); color: #cfdae8; background: rgba(255,255,255,0.026); font-size: 0.75rem; font-weight: 700; }
+    .chip.core { color: #d6fff5; border-color: rgba(85,214,190,.24); background: rgba(85,214,190,.07); }
+    .chip.growth { color: #ffe1a3; border-color: rgba(248,193,92,.23); background: rgba(248,193,92,.06); }
+    .skill-note { margin-top: 18px; padding: 16px 18px; border: 1px solid rgba(248,193,92,.19); border-radius: 14px; color: #dbc79e; background: rgba(248,193,92,.045); font-size: 0.82rem; }
+
+    .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .project-card {
       position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .case-study h2 {
-      font-size: 34px;
-      line-height: 1.15;
-      margin-bottom: 14px;
-      color: var(--dark);
-    }
-
-    .case-study.dark h2 {
-      color: white;
-    }
-
-    .case-study p {
-      color: #475569;
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-
-    .case-study.dark p {
-      color: #dbeafe;
-    }
-
-    .case-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .case-item {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      padding: 14px;
-      border-radius: 15px;
-      color: #334155;
-      font-weight: 800;
-    }
-
-    .case-study.dark .case-item {
-      background: rgba(255, 255, 255, 0.10);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      color: #f8fafc;
-    }
-
-    .case-tags {
-      margin-top: 18px;
-    }
-
-    .case-tags span {
-      display: inline-block;
-      background: #f1f5f9;
-      color: #334155;
-      padding: 8px 11px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 900;
-      margin: 4px 4px 0 0;
-    }
-
-    .case-study.dark .case-tags span {
-      background: rgba(255, 255, 255, 0.13);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: white;
-    }
-
-    .mock-screen {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 22px;
-      padding: 18px;
-      color: var(--dark);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.20);
-    }
-
-    .mock-screen.light {
-      box-shadow: var(--soft-shadow);
-      border: 1px solid #e2e8f0;
-    }
-
-    .screen-header {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-
-    .screen-header h3 {
-      font-size: 17px;
-      color: var(--dark);
-    }
-
-    .screen-filter {
-      background: #eff6ff;
-      color: #1d4ed8;
-      padding: 7px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .screen-kpis {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 15px;
-    }
-
-    .screen-kpi {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      padding: 13px;
-      border-radius: 15px;
-    }
-
-    .screen-kpi p {
-      color: #64748b;
-      font-size: 12px;
-      margin-bottom: 4px;
-      font-weight: 900;
-    }
-
-    .screen-kpi h4 {
-      font-size: 22px;
-      color: #0f172a;
-    }
-
-    .screen-table {
-      background: #f8fafc;
-      border-radius: 15px;
+      flex-direction: column;
+      min-height: 440px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(17, 37, 59, 0.86), rgba(9, 20, 35, 0.88));
       overflow: hidden;
-      border: 1px solid #e2e8f0;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .project-card:hover { transform: translateY(-5px); border-color: rgba(94,167,255,.38); }
+    .project-card::after { content: ""; position: absolute; width: 180px; height: 180px; right: -70px; top: -80px; border-radius: 50%; background: rgba(94,167,255,.09); }
+    .project-card.featured { grid-column: span 2; min-height: auto; display: grid; grid-template-columns: 1.12fr .88fr; gap: 30px; }
+    .project-index { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-size: 0.72rem; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; }
+    .project-card h3 { margin: 14px 0 10px; max-width: 620px; font-size: clamp(1.55rem, 3.2vw, 2.5rem); line-height: 1.1; letter-spacing: -0.04em; }
+    .project-card p { color: var(--muted); margin: 0; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 20px 0; }
+    .project-tags span { padding: 6px 9px; color: #bdd0e6; background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 8px; font-size: .7rem; font-weight: 700; }
+    .project-points { display: grid; gap: 10px; margin: 5px 0 24px; }
+    .project-point { display: flex; gap: 10px; color: #c5d2e2; font-size: .86rem; }
+    .project-point::before { content: "✓"; color: var(--primary); font-weight: 900; }
+    .project-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; position: relative; z-index: 1; }
+    .text-link { display: inline-flex; align-items: center; gap: 7px; color: var(--primary); font-size: .84rem; font-weight: 850; }
+    .text-link:hover { text-decoration: underline; }
+    .project-proof { display: grid; gap: 12px; align-content: center; }
+    .proof-row { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,255,255,.025); }
+    .proof-row span { color: var(--muted); font-size: .75rem; }
+    .proof-row strong { font-size: 1.15rem; }
+    .proof-row em { color: var(--primary); font-style: normal; font-size: .74rem; font-weight: 800; }
+
+    .case-study { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 42px; padding: 34px; border: 1px solid var(--line); border-radius: 24px; background: rgba(13,29,48,.68); }
+    .case-nav { display: grid; gap: 10px; align-content: start; }
+    .case-btn { width: 100%; padding: 14px 15px; text-align: left; color: #afbed0; background: transparent; border: 1px solid var(--line); border-radius: 13px; cursor: pointer; font-weight: 750; transition: .2s ease; }
+    .case-btn:hover, .case-btn.active { color: var(--text); background: rgba(85,214,190,.07); border-color: rgba(85,214,190,.28); }
+    .case-pane { display: none; }
+    .case-pane.active { display: block; animation: fadeUp .32s ease; }
+    .case-pane h3 { margin: 0 0 10px; font-size: 1.7rem; letter-spacing: -.035em; }
+    .case-pane > p { color: var(--muted); }
+    .psr-grid { display: grid; gap: 12px; margin-top: 22px; }
+    .psr-item { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.025); }
+    .psr-item b { display: block; margin-bottom: 4px; color: var(--primary); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; }
+    .psr-item p { margin: 0; color: #c6d2e2; font-size: .88rem; }
+
+    .process { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; counter-reset: step; }
+    .process-card { position: relative; padding: 22px 18px; border: 1px solid var(--line); border-radius: 17px; background: rgba(255,255,255,.025); }
+    .process-card::before { counter-increment: step; content: "0" counter(step); display: block; margin-bottom: 22px; color: var(--primary); font-weight: 900; font-size: .74rem; }
+    .process-card h3 { margin: 0 0 6px; font-size: .93rem; }
+    .process-card p { margin: 0; color: var(--muted); font-size: .76rem; }
+
+    .cta-shell { position: relative; padding: 52px; border: 1px solid rgba(85,214,190,.22); border-radius: 28px; background: linear-gradient(135deg, rgba(85,214,190,.09), rgba(94,167,255,.09)); overflow: hidden; }
+    .cta-shell::after { content: "SV"; position: absolute; right: 20px; bottom: -54px; color: rgba(255,255,255,.035); font-size: 13rem; font-weight: 950; letter-spacing: -.1em; }
+    .cta-shell h2 { position: relative; z-index: 1; max-width: 790px; margin: 0 0 14px; font-size: clamp(2.2rem, 5vw, 4.4rem); line-height: 1.02; letter-spacing: -.055em; }
+    .cta-shell p { position: relative; z-index: 1; max-width: 700px; color: #b7c6d8; }
+    .cta-actions { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+
+    footer { padding: 32px 0 42px; color: var(--muted); font-size: .82rem; }
+    .footer-grid { display: flex; justify-content: space-between; gap: 24px; align-items: center; padding-top: 26px; border-top: 1px solid var(--line); }
+    .footer-links { display: flex; gap: 18px; font-weight: 700; }
+    .footer-links a:hover { color: var(--primary); }
+
+    .reveal { opacity: 1; transform: none; }
+    .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
+    .js .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; position: absolute; top: 64px; left: 20px; right: 20px; padding: 18px; flex-direction: column; align-items: stretch; gap: 6px; background: rgba(8,18,31,.98); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 12px; }
+      .menu-btn { display: inline-grid; place-items: center; }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 42px; }
+      .hero-panel { max-width: 680px; }
+      .profile-card { position: relative; top: auto; }
+      .skills-shell { grid-template-columns: repeat(2, 1fr); }
+      .project-card.featured { grid-template-columns: 1fr; }
+      .case-study { grid-template-columns: 1fr; }
+      .case-nav { grid-template-columns: repeat(3, 1fr); }
+      .process { grid-template-columns: repeat(3, 1fr); }
     }
 
-    .screen-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      padding: 10px 12px;
-      border-bottom: 1px solid #e2e8f0;
-      font-size: 13px;
-      font-weight: 800;
+    @media (max-width: 720px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .section { padding: 72px 0; }
+      .hero { min-height: auto; padding-top: 112px; }
+      .hero h1 { font-size: clamp(2.85rem, 16vw, 4.7rem); }
+      .signals { grid-template-columns: repeat(2, 1fr); }
+      .signal:nth-child(2) { border-right: 0; }
+      .signal:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .value-grid, .skills-shell, .project-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-column: auto; }
+      .case-nav { grid-template-columns: 1fr; }
+      .process { grid-template-columns: repeat(2, 1fr); }
+      .cta-shell { padding: 34px 24px; }
+      .footer-grid { align-items: flex-start; flex-direction: column; }
     }
 
-    .screen-row:first-child {
-      background: #e0ecff;
-      color: #1e3a8a;
+    @media (max-width: 480px) {
+      .brand small { display: none; }
+      .metric-grid { grid-template-columns: 1fr; }
+      .panel-foot { flex-direction: column; }
+      .process { grid-template-columns: 1fr; }
+      .project-card { padding: 22px; min-height: auto; }
+      .case-study { padding: 22px; }
     }
 
-    .screen-row:last-child {
-      border-bottom: none;
-    }
-
-    .code-window {
-      background: #0f172a;
-      color: #dbeafe;
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .code-top {
-      background: #1e293b;
-      padding: 12px 16px;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: #94a3b8;
-    }
-
-    .code-content {
-      padding: 20px;
-      font-family: Consolas, monospace;
-      font-size: 14px;
-      line-height: 1.8;
-      overflow-x: auto;
-    }
-
-    .code-line span {
-      color: #38bdf8;
-    }
-
-    .code-comment {
-      color: #94a3b8;
-    }
-
-    .pipeline-steps {
-      display: grid;
-      gap: 14px;
-    }
-
-    .pipeline-step {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 14px;
-      align-items: start;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 18px;
-      padding: 16px;
-    }
-
-    .pipeline-number {
-      width: 48px;
-      height: 48px;
-      background: #dbeafe;
-      color: #1d4ed8;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 900;
-    }
-
-    .pipeline-step h3 {
-      color: var(--dark);
-      margin-bottom: 4px;
-    }
-
-    .pipeline-step p {
-      color: #64748b;
-      font-weight: 600;
-      font-size: 14px;
-      margin-bottom: 0;
-    }
-
-    .dashboard-duo {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .mini-dashboard {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 18px;
-      padding: 16px;
-    }
-
-    .mini-dashboard h3 {
-      color: var(--dark);
-      margin-bottom: 10px;
-    }
-
-    .mini-dashboard .small-bar {
-      height: 10px;
-      background: linear-gradient(90deg, var(--blue), var(--cyan));
-      border-radius: 999px;
-      margin: 10px 0;
-    }
-
-    .mini-dashboard .small-bar.short {
-      width: 70%;
-    }
-
-    .mini-dashboard .small-bar.medium {
-      width: 85%;
-    }
-
-    .mini-dashboard .small-bar.long {
-      width: 100%;
-    }
-
-    .workflow {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .step {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: var(--soft-shadow);
-    }
-
-    .step-number {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--blue);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      margin-bottom: 14px;
-    }
-
-    .step h3 {
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
-
-    .step p {
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .contact-card {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 22px;
-      border-radius: 20px;
-      box-shadow: var(--soft-shadow);
-    }
-
-    .contact-card h3 {
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
-
-    .contact-card a,
-    .contact-card p {
-      color: var(--blue-dark);
-      font-weight: 800;
-      word-break: break-word;
-      text-decoration: none;
-    }
-
-    footer {
-      background: var(--dark);
-      color: #cbd5e1;
-      padding: 26px 9%;
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    @media (max-width: 950px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .metrics,
-      .workflow,
-      .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .case-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .navbar {
-        padding: 13px 6%;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding: 45px 6% 35px;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      section {
-        padding: 35px 6%;
-      }
-
-      .cards,
-      .metrics,
-      .workflow,
-      .contact-grid,
-      .hero-points,
-      .case-grid,
-      .screen-kpis,
-      .dashboard-duo {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head {
-        display: block;
-      }
-
-      .section-title {
-        font-size: 28px;
-      }
-
-      .case-study {
-        padding: 24px;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <nav class="navbar">
-    <div class="logo">Shivendu Vimal</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#case-studies">Case Studies</a>
-      <a href="#workflow">Workflow</a>
-      <a href="#contact">Contact</a>
+  <header class="nav-wrap" id="navWrap">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Shivendu Vimal home">
+        <span class="brand-mark">SV</span>
+        <span>Shivendu Vimal<small>Fintech Data & Business Intelligence</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">☰</button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#contact" class="nav-cta">Let’s Connect</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main>
-
-    <section class="hero">
-      <div>
-        <div class="badge">Insurance Analytics • MIS Revenue • IRDA Data • Dashboards</div>
-
-        <h1>
-          Building end-to-end <span>insurance analytics</span> systems from raw data to dashboards.
-        </h1>
-
-        <p class="hero-subtitle">
-          I work on insurance MIS revenue reporting, IRDA data preparation, SQL-based commission logic,
-          and stakeholder dashboards using Trino SQL, Python, Google Sheets, Apps Script, HTML, CSS, and JavaScript.
-        </p>
-
-        <div class="btn-row">
-          <a class="btn" href="#projects">View Projects →</a>
-          <a class="btn secondary" href="#case-studies">View Case Studies</a>
-        </div>
-
-        <div class="hero-points">
-          <div class="hero-point">✓ MIS revenue calculation using 1000+ line Trino SQL</div>
-          <div class="hero-point">✓ 3-year IRDA data pipeline from Excel to Trino</div>
-          <div class="hero-point">✓ MIS and IRDA dashboards using Apps Script</div>
-          <div class="hero-point">✓ Sanitized portfolio without company data</div>
-        </div>
-      </div>
-
-      <div class="dashboard-preview">
-        <div class="preview-top">
-          <div class="preview-title">
-            <h3>Insurance Analytics Preview</h3>
-            <p>Sanitized sample visualization</p>
-          </div>
-          <div class="status-pill">LIVE STYLE</div>
-        </div>
-
-        <div class="mini-metrics">
-          <div class="mini-card">
-            <p>Policies</p>
-            <h2>128K</h2>
-          </div>
-
-          <div class="mini-card">
-            <p>Premium</p>
-            <h2>₹42L</h2>
-          </div>
-
-          <div class="mini-card">
-            <p>Revenue</p>
-            <h2>₹8.4L</h2>
-          </div>
-
-          <div class="mini-card">
-            <p>Growth</p>
-            <h2>+18%</h2>
-          </div>
-        </div>
-
-        <div class="chart-box">
-          <div class="chart-bars">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </div>
-
-          <div class="chart-labels">
-            <span>Jan</span>
-            <span>Feb</span>
-            <span>Mar</span>
-            <span>Apr</span>
-            <span>May</span>
-            <span>Jun</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="summary">
-        <div class="section-kicker">About Me</div>
-        <h2 class="section-title">Insurance MIS, IRDA data preparation, revenue logic, and dashboards.</h2>
-
-        <p>
-          My core work is focused on converting complicated insurance data into reliable reporting outputs.
-          I build revenue reports, prepare IRDA datasets, write SQL logic for premium and commission calculations,
-          and create dashboard views that help stakeholders understand business performance quickly.
-        </p>
-
-        <div class="skills">
-          <span class="skill">Trino SQL</span>
-          <span class="skill">MIS Revenue</span>
-          <span class="skill">Commission Logic</span>
-          <span class="skill">Python</span>
-          <span class="skill">CSV Processing</span>
-          <span class="skill">S3</span>
-          <span class="skill">Google Sheets</span>
-          <span class="skill">Apps Script</span>
-          <span class="skill">HTML</span>
-          <span class="skill">CSS</span>
-          <span class="skill">JavaScript</span>
-          <span class="skill">Dashboarding</span>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-head">
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
         <div>
-          <div class="section-kicker">Portfolio Snapshot</div>
-          <h2 class="section-title">Three main work areas</h2>
-        </div>
-        <p class="section-desc">
-          These are sanitized, portfolio-friendly highlights. They describe the type and scale of work without exposing company data.
-        </p>
-      </div>
-
-      <div class="metrics">
-        <div class="metric">
-          <h2>1000+</h2>
-          <p>Lines of Revenue SQL Logic</p>
-        </div>
-
-        <div class="metric">
-          <h2>3 FYs</h2>
-          <p>IRDA Data Prepared</p>
-        </div>
-
-        <div class="metric">
-          <h2>2</h2>
-          <p>Dashboard Systems Built</p>
-        </div>
-
-        <div class="metric">
-          <h2>100%</h2>
-          <p>Sanitized Portfolio Data</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Selected Work</div>
-          <h2 class="section-title">Portfolio Projects</h2>
-        </div>
-        <p class="section-desc">
-          The portfolio focuses on three main areas: MIS revenue reporting, IRDA data preparation, and dashboard development.
-        </p>
-      </div>
-
-      <div class="cards">
-
-        <div class="card">
-          <div class="card-icon">💰</div>
-          <h3>MIS Revenue Report Engine</h3>
-          <p>
-            Built a complex insurance revenue reporting logic using 1000+ lines of Trino SQL.
-            The report calculates policy-level revenue across retail MIS and group policies
-            by handling multiple insurers, product types, and complicated commission rate rules.
+          <div class="status-pill"><span class="status-dot"></span> Business Analyst · Insurance & Fintech Analytics</div>
+          <h1>I turn complex data into <span>business decisions.</span></h1>
+          <p class="hero-copy">
+            I build reliable analytics systems across <strong>revenue intelligence, regulatory reporting, data quality, reconciliation, executive dashboards and payments risk</strong> using SQL, Python and cloud data workflows.
           </p>
-          <span class="tag">Trino SQL</span>
-          <span class="tag">MIS Revenue</span>
-          <span class="tag">Commission Logic</span>
-          <span class="tag">Retail</span>
-          <span class="tag">Group Policies</span>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Explore proof of work <span aria-hidden="true">↘</span></a>
+            <a class="btn btn-secondary" href="https://github.com/shivenduvimal23-code" target="_blank" rel="noopener">View GitHub <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-secondary" href="mailto:shivenduvimal23@gmail.com">Email me</a>
+          </div>
+          <div class="role-strip" aria-label="Suitable roles">
+            <span>Data Analyst</span><span>Business Analyst</span><span>BI Analyst</span><span>Risk Analyst</span><span>Product Analytics</span>
+          </div>
         </div>
 
-        <div class="card">
-          <div class="card-icon">🗂️</div>
-          <h3>3-Year IRDA Data Preparation Pipeline</h3>
+        <aside class="hero-panel" aria-label="Portfolio metrics dashboard">
+          <div class="panel-top">
+            <div>
+              <div class="panel-label">Analytics portfolio</div>
+              <strong>Impact at a glance</strong>
+            </div>
+            <span class="live-pill">SANITIZED</span>
+          </div>
+          <div class="metric-grid">
+            <div class="metric"><span>Records handled</span><strong>9M+</strong><small>Large-scale reporting</small></div>
+            <div class="metric"><span>Regulatory coverage</span><strong>3 FYs</strong><small>IRDAI pipeline</small></div>
+            <div class="metric"><span>Payments model</span><strong>100K</strong><small>Synthetic transactions</small></div>
+            <div class="metric"><span>Primary strength</span><strong>SQL</strong><small>Complex business logic</small></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-head"><strong>Analytics value delivered</strong><span>Data → Decision</span></div>
+            <svg class="chart" viewBox="0 0 520 170" role="img" aria-label="Illustrative upward analytics value chart">
+              <defs>
+                <linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#55d6be" stop-opacity="0.30"/>
+                  <stop offset="100%" stop-color="#55d6be" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <g class="chart-grid"><line x1="0" y1="35" x2="520" y2="35"/><line x1="0" y1="85" x2="520" y2="85"/><line x1="0" y1="135" x2="520" y2="135"/></g>
+              <path class="chart-area" d="M0,145 C55,138 70,122 112,124 C168,126 177,98 227,102 C273,106 296,66 346,76 C405,88 431,34 520,28 L520,170 L0,170 Z"/>
+              <path class="chart-line" d="M0,145 C55,138 70,122 112,124 C168,126 177,98 227,102 C273,106 296,66 346,76 C405,88 431,34 520,28"/>
+              <circle class="chart-dot" cx="112" cy="124" r="5"/><circle class="chart-dot" cx="227" cy="102" r="5"/><circle class="chart-dot" cx="346" cy="76" r="5"/><circle class="chart-dot" cx="520" cy="28" r="5"/>
+            </svg>
+          </div>
+          <div class="panel-foot"><span><strong>Domain:</strong> Insurance + Payments</span><span><strong>Location:</strong> Noida, India</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="signal-bar section-tight" aria-label="Key portfolio statistics">
+      <div class="container signals">
+        <div class="signal reveal"><strong>2.4M+</strong><span>monthly records consolidated and validated</span></div>
+        <div class="signal reveal"><strong>0</strong><span>grouped mismatches after correction validation</span></div>
+        <div class="signal reveal"><strong>5</strong><span>analytics case studies showcased</span></div>
+        <div class="signal reveal"><strong>E2E</strong><span>from raw files and JSON to dashboards</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <aside class="profile-card reveal">
+          <div class="avatar" aria-hidden="true">SV</div>
+          <h3>Shivendu Vimal</h3>
+          <p>Business Analyst · Data & BI</p>
+          <div class="profile-meta">
+            <div class="profile-row"><span>01</span><div><strong>Current focus</strong><span>Insurance revenue, MIS, regulatory data and BI</span></div></div>
+            <div class="profile-row"><span>02</span><div><strong>Best-fit domains</strong><span>Fintech, insurance, payments, risk and operations</span></div></div>
+            <div class="profile-row"><span>03</span><div><strong>Working style</strong><span>Business-first, detail-oriented and ownership-driven</span></div></div>
+          </div>
+        </aside>
+
+        <div class="about-content reveal">
+          <span class="eyebrow">About me</span>
+          <h2>More than dashboards: I build the trusted data behind them.</h2>
           <p>
-            Prepared IRDA data for three financial years from scratch by converting Excel files
-            into selective-column CSVs using Python, storing them in S3, creating Trino tables,
-            and performing further SQL-based analysis.
+            My work sits at the intersection of business analysis and hands-on data execution. I translate reporting requirements into data logic, prepare large datasets, investigate quality issues, automate repeatable processes and communicate the final result in a way that leaders can act on.
           </p>
-          <span class="tag">Python</span>
-          <span class="tag">CSV Processing</span>
-          <span class="tag">S3</span>
-          <span class="tag">Trino</span>
-          <span class="tag">IRDA Reporting</span>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">📊</div>
-          <h3>MIS & IRDA Dashboard Suite</h3>
           <p>
-            Built dashboard views for MIS revenue and IRDA reporting using Google Sheets,
-            Google Apps Script, HTML, CSS, and JavaScript to present KPIs, trends,
-            filters, and stakeholder-ready summaries.
+            In insurance analytics, I have worked on policy-level revenue logic, premium and commission calculations, IRDAI reporting datasets, insurer reconciliation, complex JSON extraction, data correction and executive MIS. My independent CardPulse project extends that experience into payments risk, merchant intelligence and fraud-threshold evaluation.
           </p>
-          <span class="tag">Google Sheets</span>
-          <span class="tag">Apps Script</span>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">Dashboard</span>
+          <div class="value-grid">
+            <article class="value-card"><div class="icon">01</div><h3>Business translation</h3><p>Convert ambiguous stakeholder requirements into clear metrics, rules and analytical outputs.</p></article>
+            <article class="value-card"><div class="icon">02</div><h3>Technical execution</h3><p>Use SQL and Python to process, model, validate and analyse complex operational data.</p></article>
+            <article class="value-card"><div class="icon">03</div><h3>Data reliability</h3><p>Resolve duplicates, nulls, mismatches, policy-number variations and reconciliation exceptions.</p></article>
+            <article class="value-card"><div class="icon">04</div><h3>Decision storytelling</h3><p>Build KPI views and concise narratives for finance, operations and leadership stakeholders.</p></article>
+          </div>
         </div>
-
-        <div class="card in-progress">
-          <div class="card-icon">🛠️</div>
-          <h3>Insurer Reconciliation Automation</h3>
-          <p>
-            In-progress automation work for insurer-wise reconciliation. This includes separate
-            scripts for different insurer formats, policy matching, cancellation handling,
-            duplicate cases, and commission difference checks.
-          </p>
-          <span class="tag">In Progress</span>
-          <span class="tag">Python</span>
-          <span class="tag">Pandas</span>
-          <span class="tag">Excel</span>
-          <span class="tag">Reconciliation</span>
-        </div>
-
       </div>
     </section>
 
-    <section id="case-studies">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Case Studies</div>
-          <h2 class="section-title">Main portfolio stories</h2>
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Capabilities</span>
+          <h2>Skills organised around the work companies need done.</h2>
+          <p>My strongest value comes from combining analytical depth, business context and reliable delivery—not from listing tools without proof.</p>
         </div>
-        <p class="section-desc">
-          These three case studies are the main explanation points for interviews, stakeholder discussions, and GitHub portfolio review.
-        </p>
+        <div class="skills-shell">
+          <article class="skill-group reveal"><h3>SQL & Data Warehousing</h3><p>Complex transformations and analytical data models</p><div class="chips"><span class="chip core">Trino SQL</span><span class="chip core">Hive</span><span class="chip core">CTEs</span><span class="chip core">Window Functions</span><span class="chip">JSON Extraction</span><span class="chip">Query Optimisation</span><span class="chip">Snowflake</span><span class="chip">SQLite</span></div></article>
+          <article class="skill-group reveal"><h3>Python & Automation</h3><p>File processing, validation and repeatable pipelines</p><div class="chips"><span class="chip core">Python</span><span class="chip core">Pandas</span><span class="chip">NumPy</span><span class="chip">Excel/CSV Processing</span><span class="chip">Data Cleaning</span><span class="chip">Validation Scripts</span><span class="chip">Synthetic Data</span></div></article>
+          <article class="skill-group reveal"><h3>BI & Visualisation</h3><p>Stakeholder dashboards and business storytelling</p><div class="chips"><span class="chip core">Google Apps Script</span><span class="chip core">HTML/CSS/JS</span><span class="chip">Superset</span><span class="chip">Google Sheets</span><span class="chip">KPI Design</span><span class="chip">Trend Analysis</span><span class="chip">Executive Reporting</span></div></article>
+          <article class="skill-group reveal"><h3>Cloud & Data Operations</h3><p>Data movement, storage and production workflows</p><div class="chips"><span class="chip core">Amazon S3</span><span class="chip">External Tables</span><span class="chip">ETL/ELT Concepts</span><span class="chip">Data Marts</span><span class="chip">Schema Mapping</span><span class="chip">Git/GitHub</span></div></article>
+          <article class="skill-group reveal"><h3>Analytics Specialisms</h3><p>Financial and operational decision support</p><div class="chips"><span class="chip core">Revenue Analytics</span><span class="chip core">Insurance Analytics</span><span class="chip core">Payments Risk</span><span class="chip">Regulatory Reporting</span><span class="chip">Reconciliation</span><span class="chip">Fraud Metrics</span><span class="chip">Root Cause Analysis</span></div></article>
+          <article class="skill-group reveal"><h3>Business Partnership</h3><p>Taking analytics from request to adoption</p><div class="chips"><span class="chip core">Requirements Gathering</span><span class="chip core">Stakeholder Management</span><span class="chip">Metric Definitions</span><span class="chip">Jira Documentation</span><span class="chip">Data Quality</span><span class="chip">Process Improvement</span></div><div class="skill-note"><strong>Growth track:</strong> expanding cloud analytics depth through BigQuery, dbt and modern semantic-layer workflows.</div></article>
+        </div>
       </div>
+    </section>
 
-      <div class="case-study dark">
-        <div class="case-grid">
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Selected projects</span>
+          <h2>Proof of work across insurance, BI and payments risk.</h2>
+          <p>Each project is sanitised or built with synthetic data so the business problem and technical approach can be shared without exposing confidential information.</p>
+        </div>
 
+        <div class="project-grid">
+          <article class="project-card featured reveal">
+            <div>
+              <span class="project-index">Featured · Payments analytics</span>
+              <h3>CardPulse: Payments Risk & Merchant Intelligence</h3>
+              <p>An end-to-end analytics product that simulates a card-payments environment and turns transaction data into executive KPIs, merchant risk scores, fraud-rule evaluation and an operational investigation queue.</p>
+              <div class="project-tags"><span>Python</span><span>SQL</span><span>SQLite</span><span>Pandas</span><span>Risk Scoring</span><span>Google Apps Script</span></div>
+              <div class="project-points">
+                <div class="project-point">Modelled customers, cards, merchants and 100,000 synthetic transactions.</div>
+                <div class="project-point">Evaluated thresholds using precision, recall, lift, review rate and fraud-amount capture.</div>
+                <div class="project-point">Produced dashboard-ready marts and an analyst investigation queue.</div>
+              </div>
+              <div class="project-actions"><a class="btn btn-primary" href="https://github.com/shivenduvimal23-code/cardpulse-payments-risk-intelligence" target="_blank" rel="noopener">Open project <span>↗</span></a></div>
+            </div>
+            <div class="project-proof" aria-label="CardPulse sample results">
+              <div class="proof-row"><div><span>Transactions analysed</span><strong>100,000</strong></div><em>REPRODUCIBLE</em></div>
+              <div class="proof-row"><div><span>Transaction value</span><strong>₹12.88 Cr</strong></div><em>SYNTHETIC</em></div>
+              <div class="proof-row"><div><span>Queue review rate</span><strong>3.08%</strong></div><em>@ SCORE 50</em></div>
+              <div class="proof-row"><div><span>Fraud lift</span><strong>3.13×</strong></div><em>VS BASELINE</em></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <span class="project-index">01 · Revenue intelligence</span>
+            <h3>Insurance Revenue Analytics Engine</h3>
+            <p>Policy-level reporting logic for premium, commission, reward and revenue across multiple insurers, products and policy structures.</p>
+            <div class="project-tags"><span>Trino</span><span>Hive</span><span>SQL</span><span>Business Rules</span><span>MIS</span></div>
+            <div class="project-points">
+              <div class="project-point">Unified insurer-specific rate logic into a repeatable reporting output.</div>
+              <div class="project-point">Handled retail and group policy structures, OD/TP splits and cancellation cases.</div>
+              <div class="project-point">Built controls to validate premium and commission totals.</div>
+            </div>
+            <div class="project-actions"><a class="text-link" href="#case-studies" data-case-target="revenue">Read case study →</a></div>
+          </article>
+
+          <article class="project-card reveal">
+            <span class="project-index">02 · Data engineering</span>
+            <h3>3-Year IRDAI Regulatory Data Pipeline</h3>
+            <p>Converted multi-year Excel reporting files into structured, analysis-ready datasets using Python, S3 and Trino.</p>
+            <div class="project-tags"><span>Python</span><span>Pandas</span><span>S3</span><span>Trino</span><span>Data Modelling</span></div>
+            <div class="project-points">
+              <div class="project-point">Selected and standardised required fields across changing source formats.</div>
+              <div class="project-point">Created repeatable CSV outputs, external tables and SQL transformations.</div>
+              <div class="project-point">Applied deduplication, policy mapping and financial validation checks.</div>
+            </div>
+            <div class="project-actions"><a class="text-link" href="#case-studies" data-case-target="irda">Read case study →</a></div>
+          </article>
+
+          <article class="project-card reveal">
+            <span class="project-index">03 · Business intelligence</span>
+            <h3>Executive MIS & IRDAI Dashboard Suite</h3>
+            <p>Interactive dashboards for premium, commission, revenue, policy count and performance trends with stakeholder-friendly filters.</p>
+            <div class="project-tags"><span>Apps Script</span><span>JavaScript</span><span>Google Sheets</span><span>KPI Design</span></div>
+            <div class="project-points">
+              <div class="project-point">Designed KPI cards, business filters, trend views and month comparisons.</div>
+              <div class="project-point">Translated raw reporting outputs into concise management views.</div>
+              <div class="project-point">Built reusable data-loading and filtering logic for multiple business segments.</div>
+            </div>
+            <div class="project-actions"><a class="text-link" href="#case-studies" data-case-target="dashboard">Read case study →</a></div>
+          </article>
+
+          <article class="project-card reveal">
+            <span class="project-index">04 · Data quality</span>
+            <h3>Policy Data Quality & Reconciliation Framework</h3>
+            <p>A reusable approach for matching insurer files with internal MIS, correcting policy identifiers and isolating actionable exceptions.</p>
+            <div class="project-tags"><span>SQL</span><span>Python</span><span>Reconciliation</span><span>Data Quality</span></div>
+            <div class="project-points">
+              <div class="project-point">Standardised policy numbers, dates, merchant names and product mappings.</div>
+              <div class="project-point">Investigated duplicates, nulls, scientific-notation corruption and mismatched amounts.</div>
+              <div class="project-point">Separated matched, unmatched, cancelled and short-commission cases.</div>
+            </div>
+            <div class="project-actions"><a class="text-link" href="#case-studies" data-case-target="quality">Read case study →</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="case-studies">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Case studies</span><h2>How I approach real analytical problems.</h2><p>Short, interview-ready explanations focused on the problem, analytical choices and business result.</p></div>
+        <div class="case-study reveal">
+          <div class="case-nav" role="tablist" aria-label="Case studies">
+            <button class="case-btn active" role="tab" aria-selected="true" data-case="revenue">Revenue engine</button>
+            <button class="case-btn" role="tab" aria-selected="false" data-case="irda">IRDAI pipeline</button>
+            <button class="case-btn" role="tab" aria-selected="false" data-case="dashboard">Dashboard suite</button>
+            <button class="case-btn" role="tab" aria-selected="false" data-case="quality">Data quality</button>
+            <button class="case-btn" role="tab" aria-selected="false" data-case="cardpulse">CardPulse risk</button>
+          </div>
           <div>
-            <div class="badge" style="background: rgba(255,255,255,0.12); color: white; border-color: rgba(255,255,255,0.2);">
-              Case Study 1
-            </div>
-
-            <h2>MIS Revenue Report Engine</h2>
-
-            <p>
-              Built a policy-level revenue reporting engine for insurance MIS using complex Trino SQL.
-              The core challenge was handling different insurers, product categories, retail policies,
-              group policies, and complicated commission rate rules in one reporting logic.
-            </p>
-
-            <div class="case-list">
-              <div class="case-item">
-                Problem: Revenue calculation rules differed by insurer, product type, policy category, and commission structure.
-              </div>
-
-              <div class="case-item">
-                Solution: Created a 1000+ line Trino SQL report to compute premium, commission, reward, and final revenue at policy level.
-              </div>
-
-              <div class="case-item">
-                Output: Produced MIS-ready revenue data that could be used for reporting, dashboarding, and business review.
-              </div>
-            </div>
-
-            <div class="case-tags">
-              <span>Trino SQL</span>
-              <span>1000+ Lines SQL</span>
-              <span>Retail MIS</span>
-              <span>Group Policies</span>
-              <span>Commission Rates</span>
-              <span>Revenue Reporting</span>
-            </div>
+            <article class="case-pane active" id="case-revenue"><h3>Insurance Revenue Analytics Engine</h3><p>Revenue rules varied by insurer, vehicle type, product, fuel, coverage, policy structure and commission component. Manual handling created maintenance and validation risk.</p><div class="psr-grid"><div class="psr-item"><b>Problem</b><p>Create one dependable policy-level output across multiple business rules and source structures.</p></div><div class="psr-item"><b>Approach</b><p>Built layered Trino SQL using CTEs, mappings, JSON extraction and explicit validation logic for premium, commission and reward.</p></div><div class="psr-item"><b>Result</b><p>Produced a reusable MIS-ready dataset that supports monthly reporting, reconciliation and dashboarding.</p></div></div></article>
+            <article class="case-pane" id="case-irda"><h3>3-Year IRDAI Regulatory Data Pipeline</h3><p>Large Excel files from multiple financial years had inconsistent structures and could not be analysed reliably in their original form.</p><div class="psr-grid"><div class="psr-item"><b>Problem</b><p>Convert changing reporting files into consistent analytical tables without losing auditability.</p></div><div class="psr-item"><b>Approach</b><p>Used Python to select and standardise fields, wrote clean CSV outputs to S3, created Trino tables and applied mapping and deduplication logic.</p></div><div class="psr-item"><b>Result</b><p>Created a structured multi-year reporting base for analysis, policy mapping and regulatory reporting checks.</p></div></div></article>
+            <article class="case-pane" id="case-dashboard"><h3>Executive MIS & IRDAI Dashboard Suite</h3><p>Stakeholders needed fast answers to premium, commission, revenue and policy questions without reviewing raw tables.</p><div class="psr-grid"><div class="psr-item"><b>Problem</b><p>Make complex monthly reporting easier to consume and compare across business dimensions.</p></div><div class="psr-item"><b>Approach</b><p>Designed KPI cards, trend charts and filters using Google Sheets, Apps Script and a custom HTML/CSS/JavaScript interface.</p></div><div class="psr-item"><b>Result</b><p>Enabled stakeholder-ready views across month, segment, merchant, product and performance metrics.</p></div></div></article>
+            <article class="case-pane" id="case-quality"><h3>Policy Data Quality & Reconciliation</h3><p>Policy identifiers and financial fields contained duplicates, nulls, formatting variations and source mismatches.</p><div class="psr-grid"><div class="psr-item"><b>Problem</b><p>Correct records while preserving unaffected fields and prove that the replacement dataset remained consistent.</p></div><div class="psr-item"><b>Approach</b><p>Created deterministic matching keys, standardisation rules, latest-record logic and before/after validation queries.</p></div><div class="psr-item"><b>Result</b><p>Validated millions of records, isolated unresolved exceptions and achieved zero grouped mismatches in a correction run.</p></div></div></article>
+            <article class="case-pane" id="case-cardpulse"><h3>CardPulse Payments Risk Intelligence</h3><p>A payments business must reduce fraud exposure without creating excessive false positives, review workload or customer friction.</p><div class="psr-grid"><div class="psr-item"><b>Problem</b><p>Prioritise risky transactions and merchants while quantifying the trade-off between recall and operational review volume.</p></div><div class="psr-item"><b>Approach</b><p>Generated synthetic relational data, built SQL marts, calculated merchant scores and evaluated multiple risk thresholds.</p></div><div class="psr-item"><b>Result</b><p>At a score threshold of 50, the sample queue reviewed about 3.08% of transactions and delivered 3.13× fraud lift.</p></div></div></article>
           </div>
-
-          <div class="code-window">
-            <div class="code-top">
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-            </div>
-
-            <div class="code-content">
-              <div class="code-comment">-- Sanitized revenue-reporting pattern</div>
-              <div class="code-line"><span>1.</span> Extract retail and group policy records</div>
-              <div class="code-line"><span>2.</span> Classify insurer, product, segment and policy type</div>
-              <div class="code-line"><span>3.</span> Apply OD, TP, reward and commission rate logic</div>
-              <div class="code-line"><span>4.</span> Calculate policy-level premium and revenue</div>
-              <div class="code-line"><span>5.</span> Validate totals against MIS reporting checks</div>
-              <div class="code-line"><span>6.</span> Prepare final revenue output for dashboards</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="case-study">
-        <div class="case-grid">
-
-          <div>
-            <div class="badge">Case Study 2</div>
-
-            <h2>3-Year IRDA Data Preparation Pipeline</h2>
-
-            <p>
-              Prepared IRDA data for three financial years from scratch. The work started from Excel files,
-              moved through Python-based selective column extraction, CSV creation, S3 storage, Trino table creation,
-              and final SQL analysis.
-            </p>
-
-            <div class="case-list">
-              <div class="case-item">
-                Problem: IRDA data was available in Excel-based formats and needed to be converted into structured analytics-ready tables.
-              </div>
-
-              <div class="case-item">
-                Solution: Used Python to extract required columns, convert Excel into clean CSV files, and store them in an S3 path.
-              </div>
-
-              <div class="case-item">
-                Output: Created Trino tables on top of the processed files and used SQL for year-wise IRDA analysis.
-              </div>
-            </div>
-
-            <div class="case-tags">
-              <span>Python</span>
-              <span>Excel to CSV</span>
-              <span>Selective Columns</span>
-              <span>S3</span>
-              <span>Trino Tables</span>
-              <span>IRDA Analysis</span>
-            </div>
-          </div>
-
-          <div class="pipeline-steps">
-            <div class="pipeline-step">
-              <div class="pipeline-number">1</div>
-              <div>
-                <h3>Excel Files</h3>
-                <p>Started with year-wise IRDA Excel files containing raw reporting data.</p>
-              </div>
-            </div>
-
-            <div class="pipeline-step">
-              <div class="pipeline-number">2</div>
-              <div>
-                <h3>Python Processing</h3>
-                <p>Selected only required columns and converted the files into clean CSV outputs.</p>
-              </div>
-            </div>
-
-            <div class="pipeline-step">
-              <div class="pipeline-number">3</div>
-              <div>
-                <h3>S3 Storage</h3>
-                <p>Stored processed CSV files in S3 paths for table creation and repeatable access.</p>
-              </div>
-            </div>
-
-            <div class="pipeline-step">
-              <div class="pipeline-number">4</div>
-              <div>
-                <h3>Trino Analysis</h3>
-                <p>Created Trino tables and performed SQL-based analysis on top of prepared data.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="case-study">
-        <div class="case-grid">
-
-          <div>
-            <div class="badge">Case Study 3</div>
-
-            <h2>MIS & IRDA Dashboard Suite</h2>
-
-            <p>
-              Built dashboard views for both MIS revenue reporting and IRDA reporting using Google Sheets,
-              Google Apps Script, HTML, CSS, and JavaScript. The goal was to make complex reporting outputs
-              easier for stakeholders to consume.
-            </p>
-
-            <div class="case-list">
-              <div class="case-item">
-                Problem: Stakeholders needed simple dashboard views instead of manually checking raw sheets and reports.
-              </div>
-
-              <div class="case-item">
-                Solution: Used Google Sheets as the data layer and Apps Script with HTML/CSS/JS for dashboard presentation.
-              </div>
-
-              <div class="case-item">
-                Output: Created KPI cards, trend views, filters, month comparisons, and stakeholder-ready summaries.
-              </div>
-            </div>
-
-            <div class="case-tags">
-              <span>Google Sheets</span>
-              <span>Apps Script</span>
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>Dashboarding</span>
-            </div>
-          </div>
-
-          <div class="mock-screen light">
-            <div class="screen-header">
-              <h3>Dashboard Suite</h3>
-              <div class="screen-filter">Sanitized View</div>
-            </div>
-
-            <div class="dashboard-duo">
-              <div class="mini-dashboard">
-                <h3>MIS Revenue</h3>
-                <div class="small-bar long"></div>
-                <div class="small-bar medium"></div>
-                <div class="small-bar short"></div>
-                <p style="color:#64748b; font-weight:800; margin-bottom:0;">Premium, revenue, commission and trends</p>
-              </div>
-
-              <div class="mini-dashboard">
-                <h3>IRDA Report</h3>
-                <div class="small-bar medium"></div>
-                <div class="small-bar long"></div>
-                <div class="small-bar short"></div>
-                <p style="color:#64748b; font-weight:800; margin-bottom:0;">Policy, premium and reporting summaries</p>
-              </div>
-            </div>
-
-            <div class="screen-kpis" style="margin-top:15px;">
-              <div class="screen-kpi">
-                <p>KPI Cards</p>
-                <h4>Ready</h4>
-              </div>
-
-              <div class="screen-kpi">
-                <p>Filters</p>
-                <h4>Added</h4>
-              </div>
-
-              <div class="screen-kpi">
-                <p>Trends</p>
-                <h4>Shown</h4>
-              </div>
-
-              <div class="screen-kpi">
-                <p>Data</p>
-                <h4>Sanitized</h4>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="case-study">
-        <div class="case-grid">
-
-          <div>
-            <div class="badge" style="background:#fff7ed; color:#c2410c; border-color:#fed7aa;">
-              In Progress
-            </div>
-
-            <h2>Insurer Reconciliation Automation</h2>
-
-            <p>
-              This work is still in progress and is kept as a supporting project in the portfolio.
-              The goal is to build separate reconciliation scripts for different insurers because each insurer file
-              has different formats, matching nuances, cancellation cases, duplicate policies, and commission difference scenarios.
-            </p>
-
-            <div class="case-list">
-              <div class="case-item">
-                Current Focus: Insurer-wise scripts with custom matching and validation logic.
-              </div>
-
-              <div class="case-item">
-                Key Complexity: Different Excel formats, policy number variations, cancellation cases, and short commission checks.
-              </div>
-
-              <div class="case-item">
-                Portfolio Positioning: Supporting project, not the main focus until fully completed.
-              </div>
-            </div>
-
-            <div class="case-tags">
-              <span>In Progress</span>
-              <span>Python</span>
-              <span>Pandas</span>
-              <span>Excel Automation</span>
-              <span>Policy Matching</span>
-            </div>
-          </div>
-
-          <div class="code-window">
-            <div class="code-top">
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-            </div>
-
-            <div class="code-content">
-              <div class="code-comment"># Sanitized reconciliation workflow</div>
-              <div class="code-line"><span>1.</span> Read insurer-specific Excel format</div>
-              <div class="code-line"><span>2.</span> Standardize policy numbers and dates</div>
-              <div class="code-line"><span>3.</span> Match insurer data with internal MIS</div>
-              <div class="code-line"><span>4.</span> Identify billed, unbilled and cancelled cases</div>
-              <div class="code-line"><span>5.</span> Check duplicate and short commission cases</div>
-              <div class="code-line"><span>6.</span> Export final reconciliation output</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-
-    <section id="workflow">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">How I Work</div>
-          <h2 class="section-title">From raw data to stakeholder dashboard</h2>
-        </div>
-      </div>
-
-      <div class="workflow">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>Extract</h3>
-          <p>Collect data from Excel, MIS outputs, SQL tables, and reporting sources.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>Prepare</h3>
-          <p>Clean files, convert formats, select required columns, and create analytics-ready data.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>Calculate</h3>
-          <p>Apply SQL logic for premium, commission, reward, revenue, and policy-level reporting.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-number">4</div>
-          <h3>Present</h3>
-          <p>Build dashboards, final reports, and stakeholder-ready summaries.</p>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="summary">
-        <div class="section-kicker">Portfolio Explanation</div>
-        <h2 class="section-title">How I explain this portfolio</h2>
-        <p>
-          My portfolio focuses on three major insurance analytics projects. First, I built a MIS revenue report engine
-          using Trino SQL to compute policy-level revenue across multiple insurers, retail policies, group policies,
-          and complicated commission rate rules. Second, I prepared three years of IRDA data from scratch using Python,
-          CSV conversion, S3 storage, Trino table creation, and SQL analysis. Third, I built MIS and IRDA dashboards
-          using Google Sheets, Apps Script, HTML, CSS, and JavaScript so stakeholders could view KPIs, trends,
-          filters, and summarized business performance easily.
-        </p>
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Working method</span><h2>From unclear request to trusted decision.</h2><p>A repeatable workflow that balances business understanding, technical implementation and quality control.</p></div>
+        <div class="process">
+          <article class="process-card reveal"><h3>Understand</h3><p>Clarify the decision, stakeholder, grain, definitions and expected output.</p></article>
+          <article class="process-card reveal"><h3>Source</h3><p>Identify tables, files, JSON fields, mappings and data ownership.</p></article>
+          <article class="process-card reveal"><h3>Transform</h3><p>Build reusable SQL or Python logic with documented business rules.</p></article>
+          <article class="process-card reveal"><h3>Validate</h3><p>Check counts, amounts, duplicates, nulls, joins and reconciliation totals.</p></article>
+          <article class="process-card reveal"><h3>Communicate</h3><p>Deliver a dashboard, dataset or narrative that supports action.</p></article>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Contact</div>
-          <h2 class="section-title">Let’s connect</h2>
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="cta-shell reveal">
+          <h2>Looking for an analyst who can own the full problem?</h2>
+          <p>I am open to high-impact opportunities across data analytics, business intelligence, fintech, insurance, payments, risk and product analytics.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="mailto:shivenduvimal23@gmail.com">shivenduvimal23@gmail.com</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/shivendu-vimal-005736209" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+            <a class="btn btn-secondary" href="https://github.com/shivenduvimal23-code" target="_blank" rel="noopener">GitHub <span>↗</span></a>
+          </div>
         </div>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Email</h3>
-          <a href="mailto:shivenduvimal23@gmail.com">shivenduvimal23@gmail.com</a>
-        </div>
-
-        <div class="contact-card">
-          <h3>LinkedIn</h3>
-          <a href="https://www.linkedin.com/in/shivendu-vimal-005736209" target="_blank">
-            Shivendu Vimal
-          </a>
-        </div>
-
-        <div class="contact-card">
-  <h3>GitHub</h3>
-  <a href="https://github.com/shivenduvimal23-code/insurance-analytics-portfolio" target="_blank">
-    insurance-analytics-portfolio
-  </a>
-</div>
       </div>
     </section>
-
   </main>
 
   <footer>
-    <p>© 2026 Shivendu Vimal. Portfolio created with HTML, CSS, and JavaScript.</p>
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> Shivendu Vimal · Built with HTML, CSS and JavaScript.</div>
+      <div class="footer-links"><a href="#top">Back to top</a><a href="mailto:shivenduvimal23@gmail.com">Email</a></div>
+    </div>
   </footer>
 
+  <script>
+    const navWrap = document.getElementById('navWrap');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const navAnchors = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+
+    const updateNav = () => navWrap.classList.toggle('scrolled', window.scrollY > 18);
+    updateNav();
+    window.addEventListener('scroll', updateNav, { passive: true });
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.textContent = isOpen ? '×' : '☰';
+    });
+
+    navAnchors.forEach(anchor => anchor.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    }));
+
+    const revealItems = [...document.querySelectorAll('.reveal')];
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(el => revealObserver.observe(el));
+    } else {
+      revealItems.forEach(el => el.classList.add('visible'));
+    }
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navAnchors.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`));
+        }
+      });
+    }, { rootMargin: '-42% 0px -50% 0px' });
+    sections.forEach(section => sectionObserver.observe(section));
+
+    const caseButtons = [...document.querySelectorAll('.case-btn')];
+    const casePanes = [...document.querySelectorAll('.case-pane')];
+    function activateCase(caseId) {
+      caseButtons.forEach(btn => {
+        const active = btn.dataset.case === caseId;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', String(active));
+      });
+      casePanes.forEach(pane => pane.classList.toggle('active', pane.id === `case-${caseId}`));
+    }
+    caseButtons.forEach(btn => btn.addEventListener('click', () => activateCase(btn.dataset.case)));
+    document.querySelectorAll('[data-case-target]').forEach(link => link.addEventListener('click', () => activateCase(link.dataset.caseTarget)));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

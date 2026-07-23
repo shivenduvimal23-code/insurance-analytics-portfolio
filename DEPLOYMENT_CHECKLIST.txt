@@ -1,0 +1,18 @@
+SHIVENDU PORTFOLIO DEPLOYMENT CHECKLIST
+
+1. Download and unzip the package.
+2. Open GitHub repository: insurance-analytics-portfolio.
+3. Click index.html > Edit (pencil icon).
+4. Select all old content and replace it with the new index.html content.
+5. Commit directly to main with message:
+   Upgrade portfolio for fintech data and BI roles
+6. Replace README.md in the same way.
+7. Open Settings > Pages and confirm main / root is selected.
+8. Open the live website after deployment.
+9. Press Ctrl + F5 to clear the cached old version.
+10. Check mobile view, GitHub links, LinkedIn link and email button.
+
+OPTIONAL BUT HIGH VALUE
+- Upload latest resume as Shivendu_Vimal_Resume.pdf and add the resume button.
+- Upload a professional headshot as profile.jpg.
+- Upload portfolio-preview.png for LinkedIn/WhatsApp sharing.
