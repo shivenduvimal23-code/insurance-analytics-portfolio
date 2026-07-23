@@ -1,18 +1,24 @@
-SHIVENDU PORTFOLIO DEPLOYMENT CHECKLIST
+SHIVENDU PORTFOLIO — FINAL DEPLOYMENT CHECKLIST
 
-1. Download and unzip the package.
-2. Open GitHub repository: insurance-analytics-portfolio.
-3. Click index.html > Edit (pencil icon).
-4. Select all old content and replace it with the new index.html content.
-5. Commit directly to main with message:
-   Upgrade portfolio for fintech data and BI roles
-6. Replace README.md in the same way.
-7. Open Settings > Pages and confirm main / root is selected.
-8. Open the live website after deployment.
-9. Press Ctrl + F5 to clear the cached old version.
-10. Check mobile view, GitHub links, LinkedIn link and email button.
+[ ] Download the updated package.
+[ ] Open GitHub repository: shivenduvimal23-code/insurance-analytics-portfolio
+[ ] Replace index.html in the repository root.
+[ ] Replace README.md in the repository root.
+[ ] Keep/upload portfolio-preview.png in the repository root.
+[ ] Rename your latest one-page resume to Shivendu_Vimal_Resume.pdf.
+[ ] Upload Shivendu_Vimal_Resume.pdf in the repository root.
+[ ] Commit directly to the main branch.
+[ ] Suggested commit: Improve portfolio positioning, experience and visual proof
+[ ] Open Settings > Pages.
+[ ] Confirm Source: Deploy from a branch.
+[ ] Confirm Branch: main.
+[ ] Confirm Folder: /(root).
+[ ] Open the live website after deployment.
+[ ] Press Ctrl + Shift + R to hard refresh.
+[ ] Test both View resume buttons.
+[ ] Test CardPulse, GitHub, LinkedIn and email links.
+[ ] Check the page once on mobile.
 
-OPTIONAL BUT HIGH VALUE
-- Upload latest resume as Shivendu_Vimal_Resume.pdf and add the resume button.
-- Upload a professional headshot as profile.jpg.
-- Upload portfolio-preview.png for LinkedIn/WhatsApp sharing.
+IMPORTANT:
+The resume buttons require this exact filename:
+Shivendu_Vimal_Resume.pdf

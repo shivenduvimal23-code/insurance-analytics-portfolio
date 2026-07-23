@@ -1,65 +1,53 @@
 # Shivendu Vimal — Fintech Data & Business Intelligence Portfolio
 
-A recruiter-focused portfolio for data analyst, business analyst, BI analyst, risk analyst and product analytics opportunities.
+A recruiter-focused portfolio for Data Analyst, Business Analyst, BI Analyst, Risk Analyst and Revenue Analyst opportunities.
 
 ## Positioning
 
-This version presents Shivendu as a **fintech data and business intelligence professional**, rather than limiting the profile to insurance reporting. It connects real insurance analytics experience with the independent CardPulse payments-risk project.
+This version presents Shivendu as a fintech data and business intelligence professional with hands-on experience in insurance revenue analytics, regulatory data, data quality, reconciliation, executive MIS and payments risk.
 
-## What the site highlights
+## Major improvements in this version
 
-- Complex SQL and business-rule implementation
-- Python/Pandas data preparation and automation
-- Large-scale IRDAI regulatory data pipelines
-- Revenue, premium and commission analytics
-- Data quality, reconciliation and root-cause analysis
-- Executive dashboards and stakeholder communication
-- Payments risk, merchant intelligence and fraud metrics
-- Cloud/data-warehouse exposure through Trino, Hive, Snowflake and S3
+- Corrected the 2.4M metric to clarify that it covers Apr–Jun 2026.
+- Added context to the zero-mismatch validation result.
+- Repositioned CardPulse as an end-to-end payments analytics project.
+- Replaced Product Analytics with Revenue Analyst in the primary role targets.
+- Clearly separated production/project-proven skills from additional exposure and learning.
+- Added a sanitised Professional Experience section for the current Paytm Insurance role.
+- Added resume buttons in the hero and contact sections.
+- Added four responsive visual-proof previews using demo or synthetic data.
+- Preserved sanitisation: no internal SQL, customer data, credentials, private links or proprietary rate grids.
 
-## Deployment on GitHub Pages
+## Files to upload
 
-1. Open the repository: `insurance-analytics-portfolio`.
-2. Replace the existing `index.html` with the new `index.html` from this folder.
-3. Replace the existing `README.md` with this file.
-4. Commit the changes to the `main` branch.
-5. Open **Settings → Pages** and confirm the source is **Deploy from a branch**, branch `main`, folder `/root`.
-6. Wait for the GitHub Pages deployment check to finish, then hard refresh the live site.
+Upload these files to the root of the GitHub repository:
 
-## Optional improvements
-
-### Add a professional photo
-
-Use a square or portrait headshot with a clean background. Save it as `profile.jpg`, upload it to the repository, then replace the `.avatar` initials element in `index.html` with:
-
-```html
-<img class="avatar-photo" src="profile.jpg" alt="Shivendu Vimal" />
+```text
+insurance-analytics-portfolio/
+├── index.html
+├── portfolio-preview.png
+├── Shivendu_Vimal_Resume.pdf
+└── README.md
 ```
 
-Add this CSS:
+`Shivendu_Vimal_Resume.pdf` is not included in this package. Rename the latest one-page resume to that exact filename before uploading it. The website's resume buttons depend on this name.
 
-```css
-.avatar-photo {
-  width: 82px;
-  height: 82px;
-  object-fit: cover;
-  border-radius: 24px;
-  border: 2px solid rgba(85, 214, 190, 0.35);
-}
+## Deployment
+
+1. Open `shivenduvimal23-code/insurance-analytics-portfolio`.
+2. Replace the existing `index.html` and `README.md`.
+3. Keep or replace `portfolio-preview.png`.
+4. Upload the latest resume as `Shivendu_Vimal_Resume.pdf`.
+5. Commit directly to the `main` branch.
+6. Confirm GitHub Pages uses `main` and `/(root)`.
+7. Open the live website and hard-refresh with `Ctrl + Shift + R`.
+
+Suggested commit message:
+
+```text
+Improve portfolio positioning, experience and visual proof
 ```
 
-### Add a resume button
+## Accuracy and confidentiality
 
-Upload the latest one-page resume as `Shivendu_Vimal_Resume.pdf`, then add this button in the hero action area:
-
-```html
-<a class="btn btn-secondary" href="Shivendu_Vimal_Resume.pdf" target="_blank">View resume ↗</a>
-```
-
-### Add a social preview image
-
-A placeholder Open Graph path is already included as `portfolio-preview.png`. Upload a 1200 × 630 image with that filename for a stronger LinkedIn/WhatsApp preview.
-
-## Important accuracy note
-
-All company work should remain sanitised. Do not upload confidential SQL, customer data, internal dashboard links, credentials, S3 paths or proprietary rate grids.
+All professional experience is intentionally summarised. Do not add internal table names, customer information, S3 paths, credentials, private dashboard links or insurer rate grids.

@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#08111f" />
   <script>document.documentElement.classList.add('js');</script>
   <meta name="description" content="Shivendu Vimal is a fintech data and business intelligence analyst specialising in SQL, Python, insurance analytics, revenue intelligence, regulatory reporting, dashboards, reconciliation and payments risk." />
-  <meta name="keywords" content="Shivendu Vimal, Data Analyst, Business Analyst, BI Analyst, Fintech Analytics, Insurance Analytics, Payments Risk, SQL, Trino, Hive, Python, Pandas, Snowflake, S3, Superset, Google Apps Script, Data Quality, Reconciliation" />
+  <meta name="keywords" content="Shivendu Vimal, Data Analyst, Business Analyst, BI Analyst, Risk Analyst, Revenue Analyst, Fintech Analytics, Insurance Analytics, Payments Risk, SQL, Trino, Hive, Python, Pandas, S3, Superset, Google Apps Script, Data Quality, Reconciliation" />
   <meta name="author" content="Shivendu Vimal" />
   <meta property="og:title" content="Shivendu Vimal | Fintech Data & Business Intelligence" />
   <meta property="og:description" content="SQL, Python, data pipelines, revenue intelligence, regulatory analytics, dashboards and payments-risk projects." />
@@ -29,7 +29,7 @@
       "https://github.com/shivenduvimal23-code"
     ],
     "knowsAbout": [
-      "SQL", "Python", "Trino", "Hive", "Snowflake", "Amazon S3",
+      "SQL", "Python", "Trino", "Hive", "Amazon S3",
       "Data Analytics", "Business Intelligence", "Insurance Analytics",
       "Payments Risk", "Data Quality", "Reconciliation", "Dashboarding"
     ]
@@ -294,6 +294,76 @@
     .chip.growth { color: #ffe1a3; border-color: rgba(248,193,92,.23); background: rgba(248,193,92,.06); }
     .skill-note { margin-top: 18px; padding: 16px 18px; border: 1px solid rgba(248,193,92,.19); border-radius: 14px; color: #dbc79e; background: rgba(248,193,92,.045); font-size: 0.82rem; }
 
+    .skills-foot {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      background: rgba(255,255,255,.022);
+    }
+    .skills-foot > div { padding: 4px 2px; }
+    .skills-foot span { display: inline-flex; margin-bottom: 8px; padding: 5px 8px; border-radius: 8px; font-size: .68rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .skills-foot .proven-label { color: #d6fff5; border: 1px solid rgba(85,214,190,.24); background: rgba(85,214,190,.07); }
+    .skills-foot .growth-label { color: #ffe1a3; border: 1px solid rgba(248,193,92,.23); background: rgba(248,193,92,.06); }
+    .skills-foot strong { display: block; font-size: .93rem; }
+    .skills-foot p { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: .82rem; }
+
+    .experience-shell {
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: 28px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(17,37,59,.82), rgba(9,20,35,.86));
+      box-shadow: var(--shadow);
+    }
+    .experience-summary { padding-right: 22px; border-right: 1px solid var(--line); }
+    .experience-badge { display: inline-flex; padding: 6px 9px; color: var(--primary); background: rgba(85,214,190,.07); border: 1px solid rgba(85,214,190,.22); border-radius: 9px; font-size: .7rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .experience-summary h3 { margin: 16px 0 4px; font-size: clamp(1.65rem, 3.2vw, 2.45rem); line-height: 1.1; letter-spacing: -.04em; }
+    .experience-summary p { margin: 0; color: var(--muted); }
+    .experience-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .experience-meta span { padding: 6px 9px; color: #c9d7e7; background: rgba(255,255,255,.03); border: 1px solid var(--line); border-radius: 9px; font-size: .72rem; font-weight: 700; }
+    .experience-points { display: grid; gap: 13px; align-content: center; }
+    .experience-point { display: grid; grid-template-columns: 38px 1fr; gap: 13px; padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,255,255,.025); }
+    .experience-point b { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 11px; color: var(--primary); background: rgba(85,214,190,.07); font-size: .76rem; }
+    .experience-point strong { display: block; margin-bottom: 3px; font-size: .91rem; }
+    .experience-point p { margin: 0; color: var(--muted); font-size: .82rem; }
+
+    .proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .visual-card { padding: 22px; border: 1px solid var(--line); border-radius: 21px; background: linear-gradient(145deg, rgba(16,35,56,.78), rgba(8,19,33,.84)); overflow: hidden; }
+    .visual-card-head { display: flex; justify-content: space-between; gap: 12px; align-items: start; margin-bottom: 17px; }
+    .visual-card-head h3 { margin: 0 0 4px; font-size: 1.05rem; }
+    .visual-card-head p { margin: 0; color: var(--muted); font-size: .76rem; }
+    .preview-label { flex: none; padding: 5px 7px; color: var(--primary); background: rgba(85,214,190,.07); border: 1px solid rgba(85,214,190,.19); border-radius: 7px; font-size: .61rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .mock-screen { padding: 13px; border: 1px solid rgba(160,187,217,.13); border-radius: 14px; background: rgba(4,12,21,.68); }
+    .mock-top { display: flex; gap: 6px; margin-bottom: 12px; }
+    .mock-top i { width: 7px; height: 7px; border-radius: 50%; background: rgba(159,176,197,.35); }
+    .mini-kpis { display: grid; grid-template-columns: repeat(4,1fr); gap: 7px; }
+    .mini-kpi { padding: 8px; border: 1px solid var(--line); border-radius: 9px; background: rgba(255,255,255,.025); }
+    .mini-kpi span { display: block; color: var(--muted); font-size: .55rem; }
+    .mini-kpi strong { font-size: .75rem; }
+    .mini-chart { display: flex; align-items: end; gap: 7px; height: 85px; margin-top: 12px; padding: 10px 8px 0; border: 1px solid var(--line); border-radius: 10px; background: linear-gradient(180deg, rgba(94,167,255,.045), transparent); }
+    .mini-chart i { flex: 1; min-width: 8px; border-radius: 5px 5px 0 0; background: linear-gradient(180deg, rgba(85,214,190,.82), rgba(85,214,190,.18)); }
+    .mini-table { width: 100%; border-collapse: collapse; font-size: .66rem; }
+    .mini-table th, .mini-table td { padding: 8px 6px; text-align: left; border-bottom: 1px solid var(--line); }
+    .mini-table th { color: var(--muted); font-weight: 700; }
+    .status-ok { color: var(--primary); font-weight: 800; }
+    .risk-metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+    .risk-metric { padding: 11px 8px; text-align: center; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.024); }
+    .risk-metric strong { display: block; font-size: 1rem; }
+    .risk-metric span { color: var(--muted); font-size: .58rem; }
+    .risk-queue { display: grid; gap: 7px; margin-top: 10px; }
+    .risk-row { display: grid; grid-template-columns: 1.2fr .6fr .5fr; gap: 8px; padding: 8px; border: 1px solid var(--line); border-radius: 8px; color: #c7d4e4; font-size: .62rem; }
+    .risk-score { color: var(--accent); font-weight: 850; }
+    .pipeline { display: flex; align-items: center; gap: 7px; overflow-x: auto; padding: 10px 1px 4px; }
+    .pipeline-step { flex: 0 0 82px; min-height: 72px; display: grid; place-items: center; padding: 9px; text-align: center; border: 1px solid var(--line); border-radius: 11px; background: rgba(255,255,255,.025); color: #cbd8e8; font-size: .65rem; font-weight: 750; }
+    .pipeline-arrow { flex: none; color: var(--primary); font-weight: 900; }
+    .visual-note { margin: 12px 0 0; color: var(--muted); font-size: .7rem; }
+
     .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .project-card {
       position: relative;
@@ -367,7 +437,8 @@
       .nav-links.open { display: flex; }
       .nav-links a { padding: 10px 12px; }
       .menu-btn { display: inline-grid; place-items: center; }
-      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .hero-grid, .about-grid, .experience-shell { grid-template-columns: 1fr; }
+      .experience-summary { padding-right: 0; padding-bottom: 22px; border-right: 0; border-bottom: 1px solid var(--line); }
       .hero-grid { gap: 42px; }
       .hero-panel { max-width: 680px; }
       .profile-card { position: relative; top: auto; }
@@ -386,7 +457,9 @@
       .signals { grid-template-columns: repeat(2, 1fr); }
       .signal:nth-child(2) { border-right: 0; }
       .signal:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-      .value-grid, .skills-shell, .project-grid { grid-template-columns: 1fr; }
+      .value-grid, .skills-shell, .project-grid, .proof-grid, .skills-foot { grid-template-columns: 1fr; }
+      .skills-foot p { grid-column: auto; }
+      .mini-kpis { grid-template-columns: repeat(2, 1fr); }
       .project-card.featured { grid-column: auto; }
       .case-nav { grid-template-columns: 1fr; }
       .process { grid-template-columns: repeat(2, 1fr); }
@@ -421,6 +494,7 @@
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">☰</button>
       <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#case-studies">Case Studies</a>
@@ -441,10 +515,11 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">Explore proof of work <span aria-hidden="true">↘</span></a>
             <a class="btn btn-secondary" href="https://github.com/shivenduvimal23-code" target="_blank" rel="noopener">View GitHub <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-secondary" href="Shivendu_Vimal_Resume.pdf" target="_blank" rel="noopener">View resume <span aria-hidden="true">↗</span></a>
             <a class="btn btn-secondary" href="mailto:shivenduvimal23@gmail.com">Email me</a>
           </div>
           <div class="role-strip" aria-label="Suitable roles">
-            <span>Data Analyst</span><span>Business Analyst</span><span>BI Analyst</span><span>Risk Analyst</span><span>Product Analytics</span>
+            <span>Data Analyst</span><span>Business Analyst</span><span>BI Analyst</span><span>Risk Analyst</span><span>Revenue Analyst</span>
           </div>
         </div>
 
@@ -484,8 +559,8 @@
 
     <section class="signal-bar section-tight" aria-label="Key portfolio statistics">
       <div class="container signals">
-        <div class="signal reveal"><strong>2.4M+</strong><span>monthly records consolidated and validated</span></div>
-        <div class="signal reveal"><strong>0</strong><span>grouped mismatches after correction validation</span></div>
+        <div class="signal reveal"><strong>2.4M+</strong><span>records consolidated and validated across Apr–Jun 2026</span></div>
+        <div class="signal reveal"><strong>0</strong><span>mismatch groups in final correction-table validation</span></div>
         <div class="signal reveal"><strong>5</strong><span>analytics case studies showcased</span></div>
         <div class="signal reveal"><strong>E2E</strong><span>from raw files and JSON to dashboards</span></div>
       </div>
@@ -496,7 +571,7 @@
         <aside class="profile-card reveal">
           <div class="avatar" aria-hidden="true">SV</div>
           <h3>Shivendu Vimal</h3>
-          <p>Business Analyst · Data & BI</p>
+          <p>Business Analyst · Data, BI & Revenue Analytics</p>
           <div class="profile-meta">
             <div class="profile-row"><span>01</span><div><strong>Current focus</strong><span>Insurance revenue, MIS, regulatory data and BI</span></div></div>
             <div class="profile-row"><span>02</span><div><strong>Best-fit domains</strong><span>Fintech, insurance, payments, risk and operations</span></div></div>
@@ -523,6 +598,30 @@
       </div>
     </section>
 
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Professional experience</span>
+          <h2>Business analysis backed by hands-on data execution.</h2>
+          <p>A sanitised summary of my current role, focused on the work and capabilities relevant to future employers.</p>
+        </div>
+        <div class="experience-shell reveal">
+          <div class="experience-summary">
+            <span class="experience-badge">Current role</span>
+            <h3>Business Analyst — Paytm Insurance</h3>
+            <p>Noida, India</p>
+            <div class="experience-meta"><span>Insurance analytics</span><span>Revenue MIS</span><span>Regulatory reporting</span><span>Data quality</span></div>
+          </div>
+          <div class="experience-points">
+            <article class="experience-point"><b>01</b><div><strong>Revenue and policy-level analytics</strong><p>Develop premium, commission, reward and revenue reporting logic across insurers, products and policy structures.</p></div></article>
+            <article class="experience-point"><b>02</b><div><strong>Large-scale regulatory data preparation</strong><p>Prepare and validate IRDAI reporting datasets using SQL, Python, Hive, Trino and S3-based workflows.</p></div></article>
+            <article class="experience-point"><b>03</b><div><strong>Management reporting and dashboards</strong><p>Translate reporting requirements into validated datasets, KPI views and executive MIS for business stakeholders.</p></div></article>
+            <article class="experience-point"><b>04</b><div><strong>Data quality and root-cause analysis</strong><p>Investigate duplicates, nulls, mapping issues, identifier variations and source mismatches, then validate corrections.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="skills">
       <div class="container">
         <div class="section-head reveal">
@@ -531,12 +630,17 @@
           <p>My strongest value comes from combining analytical depth, business context and reliable delivery—not from listing tools without proof.</p>
         </div>
         <div class="skills-shell">
-          <article class="skill-group reveal"><h3>SQL & Data Warehousing</h3><p>Complex transformations and analytical data models</p><div class="chips"><span class="chip core">Trino SQL</span><span class="chip core">Hive</span><span class="chip core">CTEs</span><span class="chip core">Window Functions</span><span class="chip">JSON Extraction</span><span class="chip">Query Optimisation</span><span class="chip">Snowflake</span><span class="chip">SQLite</span></div></article>
+          <article class="skill-group reveal"><h3>SQL & Data Warehousing</h3><p>Complex transformations and analytical data models</p><div class="chips"><span class="chip core">Trino SQL</span><span class="chip core">Hive</span><span class="chip core">CTEs</span><span class="chip core">Window Functions</span><span class="chip">JSON Extraction</span><span class="chip">Query Optimisation</span><span class="chip core">SQLite</span></div></article>
           <article class="skill-group reveal"><h3>Python & Automation</h3><p>File processing, validation and repeatable pipelines</p><div class="chips"><span class="chip core">Python</span><span class="chip core">Pandas</span><span class="chip">NumPy</span><span class="chip">Excel/CSV Processing</span><span class="chip">Data Cleaning</span><span class="chip">Validation Scripts</span><span class="chip">Synthetic Data</span></div></article>
           <article class="skill-group reveal"><h3>BI & Visualisation</h3><p>Stakeholder dashboards and business storytelling</p><div class="chips"><span class="chip core">Google Apps Script</span><span class="chip core">HTML/CSS/JS</span><span class="chip">Superset</span><span class="chip">Google Sheets</span><span class="chip">KPI Design</span><span class="chip">Trend Analysis</span><span class="chip">Executive Reporting</span></div></article>
           <article class="skill-group reveal"><h3>Cloud & Data Operations</h3><p>Data movement, storage and production workflows</p><div class="chips"><span class="chip core">Amazon S3</span><span class="chip">External Tables</span><span class="chip">ETL/ELT Concepts</span><span class="chip">Data Marts</span><span class="chip">Schema Mapping</span><span class="chip">Git/GitHub</span></div></article>
           <article class="skill-group reveal"><h3>Analytics Specialisms</h3><p>Financial and operational decision support</p><div class="chips"><span class="chip core">Revenue Analytics</span><span class="chip core">Insurance Analytics</span><span class="chip core">Payments Risk</span><span class="chip">Regulatory Reporting</span><span class="chip">Reconciliation</span><span class="chip">Fraud Metrics</span><span class="chip">Root Cause Analysis</span></div></article>
-          <article class="skill-group reveal"><h3>Business Partnership</h3><p>Taking analytics from request to adoption</p><div class="chips"><span class="chip core">Requirements Gathering</span><span class="chip core">Stakeholder Management</span><span class="chip">Metric Definitions</span><span class="chip">Jira Documentation</span><span class="chip">Data Quality</span><span class="chip">Process Improvement</span></div><div class="skill-note"><strong>Growth track:</strong> expanding cloud analytics depth through BigQuery, dbt and modern semantic-layer workflows.</div></article>
+          <article class="skill-group reveal"><h3>Business Partnership</h3><p>Taking analytics from request to adoption</p><div class="chips"><span class="chip core">Requirements Gathering</span><span class="chip core">Stakeholder Management</span><span class="chip">Metric Definitions</span><span class="chip">Jira Documentation</span><span class="chip">Data Quality</span><span class="chip">Process Improvement</span></div></article>
+        </div>
+        <div class="skills-foot reveal" aria-label="Skill proficiency context">
+          <div><span class="proven-label">Core and project-proven</span><strong>Trino, Hive, SQL, Python, Pandas, Amazon S3, Apps Script, Google Sheets, Superset and SQLite</strong></div>
+          <div><span class="growth-label">Additional exposure and learning</span><strong>Snowflake, BigQuery, dbt and semantic-layer concepts</strong></div>
+          <p>Currently expanding cloud analytics depth by building portfolio work in BigQuery and dbt, while keeping production-strength tools clearly separated from developing skills.</p>
         </div>
       </div>
     </section>
@@ -554,7 +658,7 @@
             <div>
               <span class="project-index">Featured · Payments analytics</span>
               <h3>CardPulse: Payments Risk & Merchant Intelligence</h3>
-              <p>An end-to-end analytics product that simulates a card-payments environment and turns transaction data into executive KPIs, merchant risk scores, fraud-rule evaluation and an operational investigation queue.</p>
+              <p>An end-to-end payments analytics project that simulates a card-payments environment and turns transaction data into executive KPIs, merchant risk scores, fraud-rule evaluation and an operational investigation queue.</p>
               <div class="project-tags"><span>Python</span><span>SQL</span><span>SQLite</span><span>Pandas</span><span>Risk Scoring</span><span>Google Apps Script</span></div>
               <div class="project-points">
                 <div class="project-point">Modelled customers, cards, merchants and 100,000 synthetic transactions.</div>
@@ -626,6 +730,57 @@
       </div>
     </section>
 
+    <section class="section" id="visual-proof">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Visual proof</span>
+          <h2>Sanitised previews of the systems behind the case studies.</h2>
+          <p>Representative views built with demo or synthetic data. They show the analytical design without exposing company data, internal links or proprietary logic.</p>
+        </div>
+        <div class="proof-grid">
+          <article class="visual-card reveal">
+            <div class="visual-card-head"><div><h3>Executive MIS dashboard</h3><p>KPI cards, trends and business filters</p></div><span class="preview-label">Demo data</span></div>
+            <div class="mock-screen">
+              <div class="mock-top"><i></i><i></i><i></i></div>
+              <div class="mini-kpis"><div class="mini-kpi"><span>Commission index</span><strong>100.0</strong></div><div class="mini-kpi"><span>Premium index</span><strong>284.7</strong></div><div class="mini-kpi"><span>Policy volume</span><strong>126K</strong></div><div class="mini-kpi"><span>MoM variance</span><strong>+8.2%</strong></div></div>
+              <div class="mini-chart" aria-label="Illustrative dashboard bar chart"><i style="height:34%"></i><i style="height:47%"></i><i style="height:41%"></i><i style="height:64%"></i><i style="height:72%"></i><i style="height:88%"></i><i style="height:79%"></i></div>
+            </div>
+            <p class="visual-note">Illustrates the KPI hierarchy and trend-led storytelling used in management reporting.</p>
+          </article>
+
+          <article class="visual-card reveal">
+            <div class="visual-card-head"><div><h3>IRDAI reporting control view</h3><p>Multi-year standardisation and validation</p></div><span class="preview-label">Sanitised</span></div>
+            <div class="mock-screen">
+              <div class="mock-top"><i></i><i></i><i></i></div>
+              <table class="mini-table" aria-label="Illustrative IRDAI pipeline validation table"><thead><tr><th>Reporting year</th><th>Schema</th><th>Validation</th></tr></thead><tbody><tr><td>FY 2023–24</td><td>Standardised</td><td class="status-ok">Passed</td></tr><tr><td>FY 2024–25</td><td>Standardised</td><td class="status-ok">Passed</td></tr><tr><td>FY 2025–26</td><td>Standardised</td><td class="status-ok">Passed</td></tr></tbody></table>
+            </div>
+            <p class="visual-note">Shows the control mindset behind changing schemas, mapping, deduplication and financial checks.</p>
+          </article>
+
+          <article class="visual-card reveal">
+            <div class="visual-card-head"><div><h3>CardPulse risk dashboard</h3><p>Threshold effectiveness and review queue</p></div><span class="preview-label">Synthetic</span></div>
+            <div class="mock-screen">
+              <div class="mock-top"><i></i><i></i><i></i></div>
+              <div class="risk-metrics"><div class="risk-metric"><strong>100K</strong><span>transactions</span></div><div class="risk-metric"><strong>3.08%</strong><span>review rate</span></div><div class="risk-metric"><strong>3.13×</strong><span>fraud lift</span></div></div>
+              <div class="risk-queue"><div class="risk-row"><span>Merchant cluster A</span><span class="risk-score">Score 86</span><span>Review</span></div><div class="risk-row"><span>Merchant cluster B</span><span class="risk-score">Score 73</span><span>Review</span></div><div class="risk-row"><span>Merchant cluster C</span><span class="risk-score">Score 61</span><span>Review</span></div></div>
+            </div>
+            <p class="visual-note">Uses the reproducible synthetic results from the public CardPulse project.</p>
+          </article>
+
+          <article class="visual-card reveal">
+            <div class="visual-card-head"><div><h3>Analytics pipeline architecture</h3><p>From source files to decision-ready output</p></div><span class="preview-label">Workflow</span></div>
+            <div class="mock-screen">
+              <div class="mock-top"><i></i><i></i><i></i></div>
+              <div class="pipeline" aria-label="Excel and JSON to Python, S3 and Hive, Trino SQL, validation and dashboards">
+                <div class="pipeline-step">Excel, CSV & JSON</div><span class="pipeline-arrow">→</span><div class="pipeline-step">Python & Pandas</div><span class="pipeline-arrow">→</span><div class="pipeline-step">S3 & Hive</div><span class="pipeline-arrow">→</span><div class="pipeline-step">Trino SQL</div><span class="pipeline-arrow">→</span><div class="pipeline-step">Validation</div><span class="pipeline-arrow">→</span><div class="pipeline-step">MIS & BI</div>
+              </div>
+            </div>
+            <p class="visual-note">Summarises the end-to-end working method used across reporting and portfolio projects.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="case-studies">
       <div class="container">
         <div class="section-head reveal"><span class="eyebrow">Case studies</span><h2>How I approach real analytical problems.</h2><p>Short, interview-ready explanations focused on the problem, analytical choices and business result.</p></div>
@@ -641,7 +796,7 @@
             <article class="case-pane active" id="case-revenue"><h3>Insurance Revenue Analytics Engine</h3><p>Revenue rules varied by insurer, vehicle type, product, fuel, coverage, policy structure and commission component. Manual handling created maintenance and validation risk.</p><div class="psr-grid"><div class="psr-item"><b>Problem</b><p>Create one dependable policy-level output across multiple business rules and source structures.</p></div><div class="psr-item"><b>Approach</b><p>Built layered Trino SQL using CTEs, mappings, JSON extraction and explicit validation logic for premium, commission and reward.</p></div><div class="psr-item"><b>Result</b><p>Produced a reusable MIS-ready dataset that supports monthly reporting, reconciliation and dashboarding.</p></div></div></article>
             <article class="case-pane" id="case-irda"><h3>3-Year IRDAI Regulatory Data Pipeline</h3><p>Large Excel files from multiple financial years had inconsistent structures and could not be analysed reliably in their original form.</p><div class="psr-grid"><div class="psr-item"><b>Problem</b><p>Convert changing reporting files into consistent analytical tables without losing auditability.</p></div><div class="psr-item"><b>Approach</b><p>Used Python to select and standardise fields, wrote clean CSV outputs to S3, created Trino tables and applied mapping and deduplication logic.</p></div><div class="psr-item"><b>Result</b><p>Created a structured multi-year reporting base for analysis, policy mapping and regulatory reporting checks.</p></div></div></article>
             <article class="case-pane" id="case-dashboard"><h3>Executive MIS & IRDAI Dashboard Suite</h3><p>Stakeholders needed fast answers to premium, commission, revenue and policy questions without reviewing raw tables.</p><div class="psr-grid"><div class="psr-item"><b>Problem</b><p>Make complex monthly reporting easier to consume and compare across business dimensions.</p></div><div class="psr-item"><b>Approach</b><p>Designed KPI cards, trend charts and filters using Google Sheets, Apps Script and a custom HTML/CSS/JavaScript interface.</p></div><div class="psr-item"><b>Result</b><p>Enabled stakeholder-ready views across month, segment, merchant, product and performance metrics.</p></div></div></article>
-            <article class="case-pane" id="case-quality"><h3>Policy Data Quality & Reconciliation</h3><p>Policy identifiers and financial fields contained duplicates, nulls, formatting variations and source mismatches.</p><div class="psr-grid"><div class="psr-item"><b>Problem</b><p>Correct records while preserving unaffected fields and prove that the replacement dataset remained consistent.</p></div><div class="psr-item"><b>Approach</b><p>Created deterministic matching keys, standardisation rules, latest-record logic and before/after validation queries.</p></div><div class="psr-item"><b>Result</b><p>Validated millions of records, isolated unresolved exceptions and achieved zero grouped mismatches in a correction run.</p></div></div></article>
+            <article class="case-pane" id="case-quality"><h3>Policy Data Quality & Reconciliation</h3><p>Policy identifiers and financial fields contained duplicates, nulls, formatting variations and source mismatches.</p><div class="psr-grid"><div class="psr-item"><b>Problem</b><p>Correct records while preserving unaffected fields and prove that the replacement dataset remained consistent.</p></div><div class="psr-item"><b>Approach</b><p>Created deterministic matching keys, standardisation rules, latest-record logic and before/after validation queries.</p></div><div class="psr-item"><b>Result</b><p>Validated more than 2.4 million records, isolated unresolved exceptions and achieved zero grouped mismatches during final replacement-table validation.</p></div></div></article>
             <article class="case-pane" id="case-cardpulse"><h3>CardPulse Payments Risk Intelligence</h3><p>A payments business must reduce fraud exposure without creating excessive false positives, review workload or customer friction.</p><div class="psr-grid"><div class="psr-item"><b>Problem</b><p>Prioritise risky transactions and merchants while quantifying the trade-off between recall and operational review volume.</p></div><div class="psr-item"><b>Approach</b><p>Generated synthetic relational data, built SQL marts, calculated merchant scores and evaluated multiple risk thresholds.</p></div><div class="psr-item"><b>Result</b><p>At a score threshold of 50, the sample queue reviewed about 3.08% of transactions and delivered 3.13× fraud lift.</p></div></div></article>
           </div>
         </div>
@@ -665,11 +820,12 @@
       <div class="container">
         <div class="cta-shell reveal">
           <h2>Looking for an analyst who can own the full problem?</h2>
-          <p>I am open to high-impact opportunities across data analytics, business intelligence, fintech, insurance, payments, risk and product analytics.</p>
+          <p>I am open to high-impact opportunities across data analytics, business intelligence, fintech, insurance, payments, risk and revenue analytics.</p>
           <div class="cta-actions">
             <a class="btn btn-primary" href="mailto:shivenduvimal23@gmail.com">shivenduvimal23@gmail.com</a>
             <a class="btn btn-secondary" href="https://www.linkedin.com/in/shivendu-vimal-005736209" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
             <a class="btn btn-secondary" href="https://github.com/shivenduvimal23-code" target="_blank" rel="noopener">GitHub <span>↗</span></a>
+            <a class="btn btn-secondary" href="Shivendu_Vimal_Resume.pdf" target="_blank" rel="noopener">Resume <span>↗</span></a>
           </div>
         </div>
       </div>
